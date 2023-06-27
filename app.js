@@ -1,11 +1,26 @@
 // Globe Icon 
-// Press to start game
+// Press to show game and hide button
+function showGame(){
+    console.log('hi')
+    let globe = document.getElementById('startGame');
+    let gameScreen = document.getElementById('game')
+    if (gameScreen.style.display == 'none'){
+        gameScreen.style.display = 'block';
+        globe.style.display = 'none';
+    } else {
+        gameScreen.style.display = 'none';
+        globe.style.display = 'block';
+    }
+    
+}
+
 
 //Game Space 
 // Location Info
 //Level One
 //Seven Continents so seven rounds
 
+// let gameStage = [one, two, three, four, five, six, seven]
 //Round One
 // Antarctica
 // Background Image change to Ice
@@ -20,6 +35,13 @@
 // three answer selections
 // if wrong answers, game over
 //correct answer then next round
+
+
+// let one = {
+//     name: "Antarctica",
+//     image:URL(),
+
+// }
 
 //Next Round
 
@@ -38,6 +60,15 @@
 // if wrong answers, game over
 //correct answer then next round
 
+
+// let two = {
+//     name: "South America",
+//     image:URL(),
+//     trivia:
+//     results
+
+// }
+
 //Next Round
 
 //Round Three
@@ -49,6 +80,14 @@
 // three answer selections
 // if wrong answers, game over
 //correct answer then next round
+
+// let three = {
+//     name: "North America",
+//     image: URL(),
+//     trivia:
+//     results:
+
+// };
 
 //Next Round
 
@@ -63,6 +102,14 @@
 // if wrong answers, game over
 //correct answer then next round
 
+// let four = {
+//     name: "Africa",
+//     image:URL(),
+//     trivia:
+//     results:
+
+// };
+
 //Next Round
 
 //Round Five
@@ -76,6 +123,14 @@
 //correct answer then next round
 
 
+// let five = {
+//     name: "Asia",
+//     image: URL(),
+//     trivia:,
+//     results:,
+
+// };
+
 //Next Round
 
 //Round Six
@@ -88,6 +143,15 @@
 // if wrong answers, game over
 //correct answer then next round
 
+
+// let six = {
+//     name: "Australia",
+//     image: URL(),
+//     trivia:,
+//     results:,
+
+// };
+
 //Next Round
 
 //Round Seven
@@ -98,3 +162,25 @@
 // three answer selections
 // if wrong answers, game over
 //correct answer then next round
+
+
+// let seven = {
+//     name: "Europe",
+//     image: URL(),
+//     trivia:,
+//     results:,
+
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+

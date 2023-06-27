@@ -1,10 +1,69 @@
 /* Globe Icons pops up */
 /* Click Globe to Enter Game Space */
+.button{
+    border: solid white;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 500px;
+}
+.globe{
+    display: block;
+    height: 500px;
+    width: 200px;
+}
+globe{
+    display: none;
+}
+.gameScreen{
+    border: solid white;
+    display: block;
+}
+gameScreen{
+    display: none;
+}
 
+
+.title{
+    border: solid blue;
+    font-size: 30px;
+    text-align: center;
+
+}
+.game{
+    border: solid fuchsia;
+}
 /* Welcome Page */
 /* Message ---------- Game Instructions */
-
 /* Button Start Game or Next Round*/
 /* Button End Game */
 
 /* First Round */
+one{
+    background-image: url(https://www.betterphotography.com/images/Blog2022/BoothIsland.gif);
+
+}
+two{
+    background-image: url(https://thumbs.gfycat.com/PoorScarceHuia-max-1mb.gif);
+
+}
+three{
+    background-image: url(https://64.media.tumblr.com/a964458bee35dd2c7411a70b0125c437/tumblr_npeokel6ip1qzxxsgo1_500.gif);
+
+}
+four{
+    background-image: url(https://img.itch.zone/aW1hZ2UvMTUxODgwMi84ODU3OTM2LmdpZg==/original/JxtoBT.gif);
+
+}
+five{
+    background-image: url(https://thehustle.co/wp-content/uploads/2020/02/header-2.gif);
+
+}
+six{
+    background-image: url(https://oztreasure.weebly.com/uploads/1/1/0/3/11031372/published/madmax.gif?1502437962);
+
+}
+seven{
+    background-image: url(https://giffiles.alphacoders.com/143/14397.gif);
+
+}
