@@ -1,27 +1,16 @@
 /* Globe Icons pops up */
 /* Click Globe to Enter Game Space */
-.button{
+startGame{
     border: solid white;
     display: flex;
     justify-content: center;
     background-color: black;
     height: 500px;
 }
-.globe{
-    display: block;
-    height: 500px;
-    width: 200px;
+#startGame.hover{
+    opacity: 40;
 }
-globe{
-    display: none;
-}
-.gameScreen{
-    border: solid white;
-    display: block;
-}
-gameScreen{
-    display: none;
-}
+
 
 
 .title{
@@ -30,11 +19,13 @@ gameScreen{
     text-align: center;
 
 }
-.game{
-    border: solid fuchsia;
-}
 /* Welcome Page */
 /* Message ---------- Game Instructions */
+/* Game Board */
+
+game{
+    background-image: url(https://cdn.pixabay.com/photo/2013/07/12/16/57/world-map-151576_1280.png);
+}
 /* Button Start Game or Next Round*/
 /* Button End Game */
 

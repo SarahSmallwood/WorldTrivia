@@ -1,10 +1,9 @@
 // Globe Icon 
 // Press to show game and hide button
 function showGame(){
-    console.log('hi')
     let globe = document.getElementById('startGame');
     let gameScreen = document.getElementById('game')
-    if (gameScreen.style.display == 'none'){
+    if (gameScreen.style.display = 'none'){
         gameScreen.style.display = 'block';
         globe.style.display = 'none';
     } else {
