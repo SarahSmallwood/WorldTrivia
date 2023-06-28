@@ -3,29 +3,134 @@
 startGame{
     border: solid white;
     display: flex;
-    justify-content: center;
+    align-items: center;
     background-color: black;
     height: 500px;
 }
-#startGame.hover{
-    opacity: 40;
+startGame:hover{
+    opacity: 0.5;
+    background-color: aliceblue;
 }
 
 
 
 .title{
-    border: solid blue;
+    background-color: rgb(61, 61, 223);
+    height: 45px;
     font-size: 30px;
     text-align: center;
 
+}
+.earth{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
 }
 /* Welcome Page */
 /* Message ---------- Game Instructions */
 /* Game Board */
 
-game{
+.board{
+    margin-top: 10px;
+    height: 700px;
+    width: 100%;
+    display: flex;
     background-image: url(https://cdn.pixabay.com/photo/2013/07/12/16/57/world-map-151576_1280.png);
+
 }
+.continents{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 450px;
+    width: 140px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.antarctica{
+    background-color: rgb(200, 224, 246);
+    border: aliceblue;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 20px;
+    font-family: fantasy;
+
+}
+.antarctica:hover{
+    background-color: lightskyblue;
+    opacity: 0.5;
+}
+.southAmerica{
+    background-color: purple;
+    border: purple;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 15px;
+    font-family: fantasy;
+
+}
+.southAmerica:hover{
+    opacity: 0.5;
+}
+.northAmerica{
+    background-color: yellow;
+    border: yellow;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 15px;
+    font-family: fantasy;
+}
+.northAmerica:hover{
+    opacity: 0.5;
+}
+.africa{
+    background-color: orangered;
+    border: orangered;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 20px;
+    font-family: fantasy;
+}
+.africa:hover{
+    opacity: 0.5;
+}
+.australia{
+    background-color: pink;
+    border: pink;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 20px;
+    font-family: fantasy;
+}
+.australia:hover{
+    opacity: 0.5;
+}
+.asia{
+    background-color: darkred;
+    border: darkred;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 20px;
+    font-family: fantasy;
+}
+.asia:hover{
+    opacity: 0.5;
+}
+.europe{
+    background-color: rgb(35, 219, 35);
+    border: rgb(35, 219, 35);
+    border-radius: 40px;
+    height: 50px;
+    font-size: 20px;
+    font-family: fantasy;
+}
+.europe:hover{
+    opacity: 0.5;
+}
+
+
 /* Button Start Game or Next Round*/
 /* Button End Game */
 

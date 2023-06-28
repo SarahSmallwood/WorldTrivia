@@ -1,17 +1,17 @@
 // Globe Icon 
 // Press to show game and hide button
-function showGame(){
-    let globe = document.getElementById('startGame');
-    let gameScreen = document.getElementById('game')
-    if (gameScreen.style.display = 'none'){
-        gameScreen.style.display = 'block';
-        globe.style.display = 'none';
-    } else {
-        gameScreen.style.display = 'none';
-        globe.style.display = 'block';
-    }
+// function showGame(){
+//     let globe = document.getElementById('startGame');
+//     let gameScreen = document.getElementById('game')
+//     if (gameScreen.style.display = 'none'){
+//         gameScreen.style.display = 'block';
+//         globe.style.display = 'none';
+//     } else {
+//         gameScreen.style.display = 'none';
+//         globe.style.display = 'block';
+//     }
     
-}
+// }
 
 
 //Game Space 
