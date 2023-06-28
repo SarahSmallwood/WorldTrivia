@@ -90,6 +90,14 @@ startGame:hover{
     background-color: lightskyblue;
     opacity: 0.5;
 }
+.antarcticaQ{
+    display: none;
+    background-image: url(https://www.betterphotography.com/images/Blog2022/BoothIsland.gif);
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
+
+}
 .southAmerica{
     background-color: purple;
     border: purple;
@@ -102,6 +110,13 @@ startGame:hover{
 .southAmerica:hover{
     opacity: 0.5;
 }
+.southAQuiz{
+    display: none;
+    background-image: url(https://thumbs.gfycat.com/PoorScarceHuia-max-1mb.gif);
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
+}
 .northAmerica{
     background-color: yellow;
     border: yellow;
@@ -112,6 +127,13 @@ startGame:hover{
 }
 .northAmerica:hover{
     opacity: 0.5;
+}
+.northAQuiz{
+    display: none;
+    background-image: url(https://64.media.tumblr.com/a964458bee35dd2c7411a70b0125c437/tumblr_npeokel6ip1qzxxsgo1_500.gif);
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
 }
 .africa{
     background-color: orangered;
@@ -124,6 +146,13 @@ startGame:hover{
 .africa:hover{
     opacity: 0.5;
 }
+.africaQuiz{
+    display: none;
+    background-image: url(https://img.itch.zone/aW1hZ2UvMTUxODgwMi84ODU3OTM2LmdpZg==/original/JxtoBT.gif);
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
+}
 .australia{
     background-color: pink;
     border: pink;
@@ -134,6 +163,14 @@ startGame:hover{
 }
 .australia:hover{
     opacity: 0.5;
+}
+.australiaQ{
+    display: none;
+    background-image: url(https://thehustle.co/wp-content/uploads/2020/02/header-2.gif);
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
+
 }
 .asia{
     background-color: darkred;
@@ -146,6 +183,14 @@ startGame:hover{
 .asia:hover{
     opacity: 0.5;
 }
+.asiaQuiz{
+    display: none;
+    background-image: url(https://oztreasure.weebly.com/uploads/1/1/0/3/11031372/published/madmax.gif?1502437962);
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
+
+}
 .europe{
     background-color: rgb(35, 219, 35);
     border: rgb(35, 219, 35);
@@ -157,37 +202,17 @@ startGame:hover{
 .europe:hover{
     opacity: 0.5;
 }
+.europeQuiz{
+    display: none;
+    background-image: url(https://giffiles.alphacoders.com/143/14397.gif);
+    height: 400px;
+    width: 500px;
+    margin-left: 250px;
+
+}
 
 
 /* Button Start Game or Next Round*/
 /* Button End Game */
 
 /* First Round */
-one{
-    background-image: url(https://www.betterphotography.com/images/Blog2022/BoothIsland.gif);
-
-}
-two{
-    background-image: url(https://thumbs.gfycat.com/PoorScarceHuia-max-1mb.gif);
-
-}
-three{
-    background-image: url(https://64.media.tumblr.com/a964458bee35dd2c7411a70b0125c437/tumblr_npeokel6ip1qzxxsgo1_500.gif);
-
-}
-four{
-    background-image: url(https://img.itch.zone/aW1hZ2UvMTUxODgwMi84ODU3OTM2LmdpZg==/original/JxtoBT.gif);
-
-}
-five{
-    background-image: url(https://thehustle.co/wp-content/uploads/2020/02/header-2.gif);
-
-}
-six{
-    background-image: url(https://oztreasure.weebly.com/uploads/1/1/0/3/11031372/published/madmax.gif?1502437962);
-
-}
-seven{
-    background-image: url(https://giffiles.alphacoders.com/143/14397.gif);
-
-}

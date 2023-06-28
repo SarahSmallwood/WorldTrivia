@@ -28,6 +28,63 @@ function showDirections(){
     }
 }
 
+function showQuiz1(){
+    let ice = document.querySelector(".antarcticaQ");
+    if(ice.style.display == 'none'){
+        ice.style.display = 'block';
+    }else {
+        ice.style.display = 'none';
+    }
+}
+function showQuiz2(){
+    let jungle = document.querySelector(".southAQuiz");
+    if(jungle.style.display == 'none'){
+        jungle.style.display = 'block';
+    }else {
+        jungle.style.display = 'none';
+    }
+}
+function showQuiz3(){
+    let canyon = document.querySelector(".northAQuiz");
+    if(canyon.style.display == 'none'){
+        canyon.style.display = 'block';
+    }else {
+        canyon.style.display = 'none';
+    }
+}
+function showQuiz4(){
+    let lion = document.querySelector(".africaQuiz");
+    if(lion.style.display == 'none'){
+        lion.style.display = 'block';
+    }else {
+        lion.style.display = 'none';
+    }
+}
+function showQuiz5(){
+    let koala = document.querySelector(".australiaQ");
+    if(koala.style.display == 'none'){
+        koala.style.display = 'block';
+    }else {
+        koala.style.display = 'none';
+    }
+}
+function showQuiz6(){
+    let everest = document.querySelector(".asiaQuiz");
+    if(everest.style.display == 'none'){
+        everest.style.display = 'block';
+    }else {
+        everest.style.display = 'none';
+    }
+}
+function showQuiz7(){
+    let tower = document.querySelector(".europeQuiz");
+    if(tower.style.display == 'none'){
+        tower.style.display = 'block';
+    }else {
+        tower.style.display = 'none';
+    }
+}
+
 // let gameStage = [one, two, three, four, five, six, seven]
 //Round One
 // Antarctica
