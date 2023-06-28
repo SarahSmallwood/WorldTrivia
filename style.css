@@ -12,12 +12,12 @@ startGame:hover{
     background-color: aliceblue;
 }
 
-
-
 .title{
     background-color: rgb(61, 61, 223);
     height: 45px;
     font-size: 30px;
+    padding-top: 10px;
+    font-family: fantasy;
     text-align: center;
 
 }
@@ -31,14 +31,42 @@ startGame:hover{
 /* Welcome Page */
 /* Message ---------- Game Instructions */
 /* Game Board */
+.game{
+    margin-top: 10px;
+    background-image: url(https://cdn.pixabay.com/photo/2013/07/12/16/57/world-map-151576_1280.png);
 
+
+}
+.gameDirections{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+.directionsButton{
+    height: 40px;
+    width: 200px;
+    background-color: aqua;
+    font-family: fantasy;
+    border-radius: 40px;
+}
+.directionsButton:hover{
+    background-color: aquamarine;
+    opacity: 0.5;
+}
+.directions{
+    display: none;
+    background-color: white;
+    border: solid black;
+    border-width: 5px;
+    border-radius: 40px;
+    padding: 10px;
+    font-family: fantasy;
+}
 .board{
     margin-top: 10px;
     height: 700px;
     width: 100%;
     display: flex;
-    background-image: url(https://cdn.pixabay.com/photo/2013/07/12/16/57/world-map-151576_1280.png);
-
 }
 .continents{
     margin-top: 20px;

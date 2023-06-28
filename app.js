@@ -19,6 +19,15 @@
 //Level One
 //Seven Continents so seven rounds
 
+function showDirections(){
+    let howtoPlay = document.querySelector(".directions");
+    if(howtoPlay.style.display == 'none'){
+        howtoPlay.style.display = 'block';
+    }else {
+        howtoPlay.style.display = 'none';
+    }
+}
+
 // let gameStage = [one, two, three, four, five, six, seven]
 //Round One
 // Antarctica
