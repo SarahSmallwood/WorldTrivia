@@ -1,5 +1,10 @@
 /* Globe Icons pops up */
 /* Click Globe to Enter Game Space */
+body{
+    border: solid rgb(62, 62, 239);
+    border-radius: 5px;
+    border-width: 8px;
+}
 startGame{
     border: solid white;
     display: flex;
@@ -19,6 +24,7 @@ startGame:hover{
     padding-top: 10px;
     font-family: fantasy;
     text-align: center;
+    
 
 }
 .earth{
@@ -96,6 +102,9 @@ startGame:hover{
     height: 400px;
     width: 500px;
     margin-left: 250px;
+    border: solid white;
+    border-radius: 10px;
+    border-width: 5px;
 
 }
 .southAmerica{
@@ -112,10 +121,13 @@ startGame:hover{
 }
 .southAQuiz{
     display: none;
-    background-image: url(https://thumbs.gfycat.com/PoorScarceHuia-max-1mb.gif);
+    background-image: url(https://media0.giphy.com/media/xyvHOUQzfMfba/giphy.gif);
     height: 400px;
     width: 500px;
     margin-left: 250px;
+    border: solid white;
+    border-radius: 10px;
+    border-width: 5px;
 }
 .northAmerica{
     background-color: yellow;
@@ -131,9 +143,12 @@ startGame:hover{
 .northAQuiz{
     display: none;
     background-image: url(https://64.media.tumblr.com/a964458bee35dd2c7411a70b0125c437/tumblr_npeokel6ip1qzxxsgo1_500.gif);
-    height: 400px;
-    width: 500px;
+    height: 600px;
+    width: 450px;
     margin-left: 250px;
+    border: solid white;
+    border-radius: 10px;
+    border-width: 5px;
 }
 .africa{
     background-color: orangered;
@@ -148,10 +163,13 @@ startGame:hover{
 }
 .africaQuiz{
     display: none;
-    background-image: url(https://img.itch.zone/aW1hZ2UvMTUxODgwMi84ODU3OTM2LmdpZg==/original/JxtoBT.gif);
+    background-image: url(https://media4.giphy.com/media/2jMjVBTC1cwaiIUcN7/giphy.gif);
     height: 400px;
-    width: 500px;
+    width: 450px;
     margin-left: 250px;
+    border: solid white;
+    border-radius: 10px;
+    border-width: 5px;
 }
 .australia{
     background-color: pink;
@@ -166,10 +184,13 @@ startGame:hover{
 }
 .australiaQ{
     display: none;
-    background-image: url(https://thehustle.co/wp-content/uploads/2020/02/header-2.gif);
-    height: 400px;
-    width: 500px;
+    background-image: url(https://i.gifer.com/Irq.gif);
+    height: 500px;
+    width: 440px;
     margin-left: 250px;
+    border: solid white;
+    border-radius: 10px;
+    border-width: 5px;
 
 }
 .asia{
@@ -185,10 +206,13 @@ startGame:hover{
 }
 .asiaQuiz{
     display: none;
-    background-image: url(https://oztreasure.weebly.com/uploads/1/1/0/3/11031372/published/madmax.gif?1502437962);
+    background-image: url(https://media3.giphy.com/media/11MKLWSDvMVSp2/giphy.gif);
     height: 400px;
     width: 500px;
     margin-left: 250px;
+    border: solid white;
+    border-radius: 10px;
+    border-width: 5px;
 
 }
 .europe{
@@ -204,11 +228,13 @@ startGame:hover{
 }
 .europeQuiz{
     display: none;
-    background-image: url(https://giffiles.alphacoders.com/143/14397.gif);
-    height: 400px;
+    background-image: url(https://i.makeagif.com/media/4-01-2016/3wGcZ0.gif);
+    height: 500px;
     width: 500px;
     margin-left: 250px;
-
+    border: solid white;
+    border-radius: 10px;
+    border-width: 5px;
 }
 
 
