@@ -27,59 +27,7 @@ function showDirections(){
         howtoPlay.style.display = 'none';
     }
 }
-const Qquestions = [{
-    
- 
-},
-{
-    q2: "The world's largest source of oxygen comes from where in South America?",
-    a2:[{ text: "Andes Mountains", isCorrect: false },
-    { text: "Patagonia Chile", isCorrect: false },
-    { text: "Lake Titicaka", isCorrect: false },
-    { text: "Amazon Rainforest", isCorrect: true }
-    ]
-},
-{
-    q3: "What is considered the lowest geographical point in North America?",
-    a3: [{ text: "Death Valley", isCorrect: true },
-    { text: "Mexico City", isCorrect: false },
-    { text: "New Orleans, Lousiana", isCorrect: false },
-    { text: "Great Salt Lake", isCorrect: false }
-    ]  
-},
-{
-    q4: "Which river in Africa is the planet's longest?",
-    a4: [{ text: "Zambezi River", isCorrect: false },
-    { text: "Nile River", isCorrect: true },
-    { text: "Snake River", isCorrect: false },
-    { text: "Congo River", isCorrect: false }
-    ]  
-},
-{
-    q5: "Asia holds the largest percentage of the world's population. Which Asian country has the most people?",
-    a5: [{ text: "China", isCorrect: false },
-    { text: "India", isCorrect: true },
-    { text: "Vietnam", isCorrect: false },
-    { text: "Bangladesh", isCorrect: false }
-    ]   
-},
-{
-    q6: "In Australia, what is the largest ecosystem in the world?",
-    a6: [{ text: "The Outback", isCorrect: false },
-    { text: "The Bush", isCorrect: false },
-    { text: "Great Barrier Reef", isCorrect: true },
-    { text: "Australian Alps", isCorrect: false }
-    ]   
-},
-{
-    q7: "The most visited attraction in Europe is ______________",
-    a7: [{ text: "Stone Henge", isCorrect: false },
-    { text: "The Louvre", isCorrect: true },
-    { text: "Eiffel Tower", isCorrect: false },
-    { text: "Rome Colusseum", isCorrect: false }
-    ]   
-}
-]
+
 
 function showQuiz1(){
     let ice = document.querySelector(".antarcticaQ");
@@ -94,13 +42,19 @@ let q1 = {
     a1: [{ text: "50%", isCorrect: false },
     { text: "20%", isCorrect: false },
     { text: "90%", isCorrect: true },
-    { text: "70%", isCorrect: false }
+    { text: "70%", isCorrect: false },
     ]
 }
 function showQuestion() {
     let titleDiv = document.getElementById('questionsAN');
-    titleDiv.textContent = q.titleOne;
-  }
+    titleDiv.textContent = q1.titleOne;
+  
+    let alts = document.querySelectorAll('.answersAN');
+    console.log(alts);
+    alts.forEach(function(element, index){
+        element.textContent = q1.a1[index];
+    });
+}
   showQuestion();
 
 
@@ -113,6 +67,20 @@ function showQuiz2(){
         jungle.style.display = 'none';
     }
 }
+let q2 = {
+    title2: "The world's largest source of oxygen comes from where in South America?",
+    a2:[{ text: "Andes Mountains", isCorrect: false },
+    { text: "Patagonia Chile", isCorrect: false },
+    { text: "Lake Titicaka", isCorrect: false },
+    { text: "Amazon Rainforest", isCorrect: true }
+    ]
+}
+function showQuestion2() {
+    let titleDiv = document.getElementById('questionsSA');
+    titleDiv.textContent = q2.title2;
+  }
+  showQuestion2();
+
 function showQuiz3(){
     let canyon = document.querySelector(".northAQuiz");
     if(canyon.style.display == 'none'){
@@ -121,6 +89,20 @@ function showQuiz3(){
         canyon.style.display = 'none';
     }
 }
+let q3 = {
+    title3: "What is considered the lowest geographical point in North America?",
+    a3: [{ text: "Death Valley", isCorrect: true },
+    { text: "Mexico City", isCorrect: false },
+    { text: "New Orleans, Lousiana", isCorrect: false },
+    { text: "Great Salt Lake", isCorrect: false }
+    ]  
+}
+function showQuestion3() {
+    let titleDiv = document.getElementById('questionsNA');
+    titleDiv.textContent = q3.title3;
+  }
+  showQuestion3();
+
 function showQuiz4(){
     let lion = document.querySelector(".africaQuiz");
     if(lion.style.display == 'none'){
@@ -129,6 +111,20 @@ function showQuiz4(){
         lion.style.display = 'none';
     }
 }
+let q4 = {
+    title4: "Which river in Africa is the planet's longest?",
+    a4: [{ text: "Zambezi River", isCorrect: false },
+    { text: "Nile River", isCorrect: true },
+    { text: "Snake River", isCorrect: false },
+    { text: "Congo River", isCorrect: false }
+    ]  
+}
+function showQuestion4() {
+    let titleDiv = document.getElementById('questionsAF');
+    titleDiv.textContent = q4.title4;
+  }
+  showQuestion4();
+
 function showQuiz5(){
     let koala = document.querySelector(".australiaQ");
     if(koala.style.display == 'none'){
@@ -137,6 +133,20 @@ function showQuiz5(){
         koala.style.display = 'none';
     }
 }
+let q5 = {
+    title5: "Asia holds the largest percentage of the world's population. Which Asian country has the most people?",
+    a5: [{ text: "China", isCorrect: false },
+    { text: "India", isCorrect: true },
+    { text: "Vietnam", isCorrect: false },
+    { text: "Bangladesh", isCorrect: false }
+    ]  
+} 
+function showQuestion5() {
+    let titleDiv = document.getElementById('questionsAA');
+    titleDiv.textContent = q5.title5;
+  }
+  showQuestion5();
+
 function showQuiz6(){
     let everest = document.querySelector(".asiaQuiz");
     if(everest.style.display == 'none'){
@@ -145,6 +155,21 @@ function showQuiz6(){
         everest.style.display = 'none';
     }
 }
+let q6 = {
+    title6: "In Australia, what is the largest ecosystem in the world?",
+    a6: [{ text: "The Outback", isCorrect: false },
+    { text: "The Bush", isCorrect: false },
+    { text: "Great Barrier Reef", isCorrect: true },
+    { text: "Australian Alps", isCorrect: false }
+    ] 
+} 
+function showQuestion6() {
+    let titleDiv = document.getElementById('questionsAU');
+    titleDiv.textContent = q6.title6;
+  }
+  showQuestion6();
+
+
 function showQuiz7(){
     let tower = document.querySelector(".europeQuiz");
     if(tower.style.display == 'none'){
@@ -153,6 +178,19 @@ function showQuiz7(){
         tower.style.display = 'none';
     }
 }
+let q7 = {
+    title7: "The most visited attraction in Europe is ______________",
+    a7: [{ text: "Stone Henge", isCorrect: false },
+    { text: "The Louvre", isCorrect: true },
+    { text: "Eiffel Tower", isCorrect: false },
+    { text: "Rome Colusseum", isCorrect: false }
+    ] 
+}
+function showQuestion7() {
+    let titleDiv = document.getElementById('questionsEU');
+    titleDiv.textContent = q7.title7;
+  }
+  showQuestion7();
 
 
 

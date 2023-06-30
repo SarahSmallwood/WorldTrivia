@@ -83,6 +83,14 @@ startGame:hover{
     flex-direction: column;
     justify-content: space-between;
 }
+#submit{
+    height: 40px;
+    width: 100px;
+    background-color: aqua;
+    font-family: fantasy;
+    border-radius: 40px;
+
+}
 .antarctica{
     background-color: rgb(200, 224, 246);
     border: aliceblue;
