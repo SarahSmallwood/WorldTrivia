@@ -18,6 +18,12 @@
 // Location Info
 //Level One
 //Seven Continents so seven rounds
+let score = 0
+
+
+const consoletoScreen=(alts)=>{
+
+}
 
 function showDirections(){
     let howtoPlay = document.querySelector(".directions");
@@ -45,17 +51,133 @@ let q1 = {
     { text: "70%", isCorrect: false },
     ]
 }
-function showQuestion() {
-    let titleDiv = document.getElementById('questionsAN');
-    titleDiv.textContent = q1.titleOne;
-  
-    let alts = document.querySelectorAll('.answersAN');
-    console.log(alts);
-    alts.forEach(function(element, index){
-        element.textContent = q1.a1[index];
-    });
+
+// a -> 0, b -> 1 , c -> 2,.... d, e
+// list of continents -> [a, b, c, d, e....]
+// list of correct answers -> [2, 3, 0, 1, ...]
+// list of questions ->
+// [
+    // [
+        //  "question 1",
+        //  "question 2"
+        // ].
+    // [
+    //  "question 1",
+    //  "question 2"
+    // ].
+    // [
+    //  "question 1",
+    //  "question 2"
+    // ].
+    // ...
+// 
+// ]
+
+let questionList =
+    [
+        'Antarctica contains what percentage of total ice on Earth?',
+        'The worlds largest source of oxygen comes from where in South America',
+        'What is considered the lowest geographical point in North America?',
+        'Which river in Africa is the planets longest?',
+        'In Australia, what is the largest ecosystem in the world?',
+        'Asia holds the largest percentage of the worlds population. Which Asian country has the most people?',
+        'The most visited attraction in Europe is ______________'
+
+    ]
+let correctAnswerList = [2, 3, 0, 1, 2, 1, 1]
+let answerList =
+    [
+        // Antartica answers
+        [
+            "50",
+            '20',
+            '90',
+            '70'
+        ],
+        // South America answers
+        [
+            "Andes Mountains", 
+            "Patagonia Chile", 
+            "Lake Titicaka", 
+            "Amazon Rainforest"
+        ],
+        // NA Answers 
+        [
+            "Death Valley", 
+            "Mexico City",
+            "New Orleans, Lousiana",
+            "Great Salt Lake"
+        ],
+        // Africa Answers
+        [
+            "Zambezi River",
+            "Nile River",
+            "Snake River",
+            "Congo River"
+        ],
+        // Australia Answers
+        [
+            "The Outback",
+            "The Bush",
+            "Great Barrier Reef",
+            "Australian Alps"  
+        ],
+        // Asia Answers
+        [
+            "China",
+            "India",
+            "Vietnam",
+            "Bangladesh"
+        ],
+        // europe answers
+        [
+            "Stone Henge",
+            "The Louvre",
+            "Eiffel Tower",
+            "Rome Colusseum"
+        ]
+    ]
+
+function showQuestion(index, elementId, selector) {
+
+    let titleDiv = document.getElementById(elementId);
+    titleDiv.textContent = questionList[index];
+
+    consoleToScreen(selector, answerList[index])
 }
-  showQuestion();
+
+function consoleToScreen(selector, answerList) {
+    let answerOne = document.getElementById(`${selector}AnswerOne`);
+    answerOne.textContent = answerList[0]
+
+    let answerTwo = document.getElementById(selector + 'AnswerTwo');
+    answerTwo.textContent = answerList[1]
+
+    let answerThree = document.getElementById(selector + 'AnswerThree');
+    answerThree.textContent = answerList[2]
+
+    let answerFour = document.getElementById(selector + 'AnswerFour');
+    answerFour.textContent = answerList[3]
+}
+
+// // TODO - could be deleted
+// function showQuestion() {
+//     let titleDiv = document.getElementById('questionsAN');
+//     titleDiv.textContent = q1.titleOne;
+  
+//     let alts = document.querySelectorAll('.answersAN');
+//     consoletoScreen(`${alts}`);
+//     alts.forEach(function(element, index){
+//         element.textContent = q1.a1[index];
+//     });
+// }
+showQuestion(0, 'questionsAN', 'antarctica');
+showQuestion(1, 'questionsSA', 'southAmerica');
+showQuestion(2, 'questionsNA', 'northAmerica');
+showQuestion(3, 'questionsAF', 'africa');
+showQuestion(4, 'questionsAU', 'australia');
+showQuestion(5, 'questionsAA', 'asia');
+showQuestion(6, 'questionsEU', 'europe');
 
 
 
@@ -63,7 +185,7 @@ function showQuiz2(){
     let jungle = document.querySelector(".southAQuiz");
     if(jungle.style.display == 'none'){
         jungle.style.display = 'block';
-    }else {
+    } else {
         jungle.style.display = 'none';
     }
 }
@@ -75,11 +197,10 @@ let q2 = {
     { text: "Amazon Rainforest", isCorrect: true }
     ]
 }
-function showQuestion2() {
-    let titleDiv = document.getElementById('questionsSA');
-    titleDiv.textContent = q2.title2;
-  }
-  showQuestion2();
+
+// TODO - could be deleted
+
+//   showQuestion2();
 
 function showQuiz3(){
     let canyon = document.querySelector(".northAQuiz");
@@ -97,11 +218,9 @@ let q3 = {
     { text: "Great Salt Lake", isCorrect: false }
     ]  
 }
-function showQuestion3() {
-    let titleDiv = document.getElementById('questionsNA');
-    titleDiv.textContent = q3.title3;
-  }
-  showQuestion3();
+
+// TODO - could be deleted
+
 
 function showQuiz4(){
     let lion = document.querySelector(".africaQuiz");
@@ -119,11 +238,9 @@ let q4 = {
     { text: "Congo River", isCorrect: false }
     ]  
 }
-function showQuestion4() {
-    let titleDiv = document.getElementById('questionsAF');
-    titleDiv.textContent = q4.title4;
-  }
-  showQuestion4();
+
+// TODO - could be deleted
+
 
 function showQuiz5(){
     let koala = document.querySelector(".australiaQ");
@@ -134,18 +251,15 @@ function showQuiz5(){
     }
 }
 let q5 = {
-    title5: "Asia holds the largest percentage of the world's population. Which Asian country has the most people?",
-    a5: [{ text: "China", isCorrect: false },
-    { text: "India", isCorrect: true },
-    { text: "Vietnam", isCorrect: false },
-    { text: "Bangladesh", isCorrect: false }
-    ]  
+    title5: [{ text: "The Outback", isCorrect: false },
+    { text: "The Bush", isCorrect: false },
+    { text: "Great Barrier Reef", isCorrect: true },
+    { text: "Australian Alps", isCorrect: false }
+    ]
 } 
-function showQuestion5() {
-    let titleDiv = document.getElementById('questionsAA');
-    titleDiv.textContent = q5.title5;
-  }
-  showQuestion5();
+
+// TODO - could be deleted
+
 
 function showQuiz6(){
     let everest = document.querySelector(".asiaQuiz");
@@ -156,18 +270,17 @@ function showQuiz6(){
     }
 }
 let q6 = {
-    title6: "In Australia, what is the largest ecosystem in the world?",
-    a6: [{ text: "The Outback", isCorrect: false },
-    { text: "The Bush", isCorrect: false },
-    { text: "Great Barrier Reef", isCorrect: true },
-    { text: "Australian Alps", isCorrect: false }
-    ] 
+    title6: "Asia holds the largest percentage of the world's population. Which Asian country has the most people?",
+    a5: [{ text: "China", isCorrect: false },
+    { text: "India", isCorrect: true },
+    { text: "Vietnam", isCorrect: false },
+    { text: "Bangladesh", isCorrect: false }
+    ]  
 } 
-function showQuestion6() {
-    let titleDiv = document.getElementById('questionsAU');
-    titleDiv.textContent = q6.title6;
-  }
-  showQuestion6();
+
+
+// TODO - could be deleted
+
 
 
 function showQuiz7(){
@@ -186,171 +299,18 @@ let q7 = {
     { text: "Rome Colusseum", isCorrect: false }
     ] 
 }
-function showQuestion7() {
-    let titleDiv = document.getElementById('questionsEU');
-    titleDiv.textContent = q7.title7;
-  }
-  showQuestion7();
+
+let answerOption = document.querySelector('.answerList li');
+let submitButton = document.querySelector('.submit');
 
 
+answerOption.forEach(option => {
+    option.addEventListener('click', function () {
+        console.log(submitButton.getAttribute('type'));
 
-// let gameStage = [one, two, three, four, five, six, seven]
-//Round One
-// Antarctica
-// Background Image change to Ice
-// Button Start Round
-
-//Ice Everywhere!! You are in danger of freezing to death
-// Only your survival gear will save you
-//Answer World Trivia to access survival backpack
-
-// Trivia Box
-// Question
-// three answer selections
-// if wrong answers, game over
-//correct answer then next round
-
-
-// let one = {
-//     name: "Antarctica",
-//     image:URL(),
-
-// }
-
-//Next Round
-
-//Round Two
-//South America
-//Background Image change to Amazon
-//Button Start Round
-
-//Lost in the Jungle
-//The trail is too thick for you to see through the jungle to find your way. You keep becoming trapped in the vines!
-//Answer World Trivia to access survival backpack
-
-// Trivia Box
-// Question
-// three answer selections
-// if wrong answers, game over
-//correct answer then next round
-
-
-// let two = {
-//     name: "South America",
-//     image:URL(),
-//     trivia:
-//     results
-
-// }
-
-//Next Round
-
-//Round Three
-//North America
-//Grand Canyon Flood
-//A hike through America's greatest wonder has turned to disaster. A brutal rainstorm has filled some of the canyon and turned to a flash flood.
-// Trivia Box
-// Question
-// three answer selections
-// if wrong answers, game over
-//correct answer then next round
-
-// let three = {
-//     name: "North America",
-//     image: URL(),
-//     trivia:
-//     results:
-
-// };
-
-//Next Round
-
-
-//Round Four
-//Africa
-//You've explored Africa from Mt. Kilamanjaro to Cape Town South Africa, but there is one pest you cant escape from
-// MOSQUITOS!!!
-// Trivia Box
-// Question
-// three answer selections
-// if wrong answers, game over
-//correct answer then next round
-
-// let four = {
-//     name: "Africa",
-//     image:URL(),
-//     trivia:
-//     results:
-
-// };
-
-//Next Round
-
-//Round Five
-//Asia
-//Let's try extreme tourism! How about you visit the highest point on Earth, Mt. Everest!
-//The higher up you go, the harder it is to breathe
-// Trivia Box
-// Question
-// three answer selections
-// if wrong answers, game over
-//correct answer then next round
-
-
-// let five = {
-//     name: "Asia",
-//     image: URL(),
-//     trivia:,
-//     results:,
-
-// };
-
-//Next Round
-
-//Round Six
-//Australia
-//Adventures on the Outback
-// Crikey!! A snake bite!! 
-// Trivia Box
-// Question
-// three answer selections
-// if wrong answers, game over
-//correct answer then next round
-
-
-// let six = {
-//     name: "Australia",
-//     image: URL(),
-//     trivia:,
-//     results:,
-
-// };
-
-//Next Round
-
-//Round Seven
-//Europe
-//Paris is beautiful, but climbing the Eiffel Tower was not your best idea.
-//// Trivia Box
-// Question
-// three answer selections
-// if wrong answers, game over
-//correct answer then next round
-
-
-// let seven = {
-//     name: "Europe",
-//     image: URL(),
-//     trivia:,
-//     results:,
-
-// };
-
-
-
-
-
-
+        answerSelect(option, submitButton, answerOption);
+    });
+});
 
 
 
