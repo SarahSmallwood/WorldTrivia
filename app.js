@@ -193,7 +193,7 @@ let q2 = {
     title2: "The world's largest source of oxygen comes from where in South America?",
     a2:[{ text: "Andes Mountains", isCorrect: false },
     { text: "Patagonia Chile", isCorrect: false },
-    { text: "Lake Titicaka", isCorrect: false },
+    { text: "Lake Titicaca", isCorrect: false },
     { text: "Amazon Rainforest", isCorrect: true }
     ]
 }
@@ -303,7 +303,7 @@ let q7 = {
 let answerOption = document.querySelector('.answerList li');
 let submitButton = document.querySelector('.submit');
 
-
+// Answer options for questions functionality
 answerOption.forEach(option => {
     option.addEventListener('click', function () {
         console.log(submitButton.getAttribute('type'));
@@ -311,6 +311,23 @@ answerOption.forEach(option => {
         answerSelect(option, submitButton, answerOption);
     });
 });
+// Functionality of submit button 
+submitButton.addEventListener('click', function ()) {
+    if (submitButton.getAttribute('type') === 'submit'){
+        buttonCheck();
+    } else {
+        buttonReset();
+    }
+};
+
+// Event to choose answer from selected question
+
+function answerSelect(event, submitButton) {
+    if (submitButton.getAttribute('type')=== 'submit'){
+        for (let i = 0; i < answerOption; i++)
+    }
+}
+
 
 
 
