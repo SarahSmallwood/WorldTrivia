@@ -42,6 +42,7 @@ startGame:hover{
     margin-top: 10px;
     background-image: url(https://cdn.pixabay.com/photo/2013/07/12/16/57/world-map-151576_1280.png);
     height: 500px;
+    
 }
 .gameDirections{
     width: 100%;
@@ -83,10 +84,13 @@ startGame:hover{
     flex-direction: column;
     justify-content: space-between;
 }
+#quiz{
+    justify-content: space-evenly;
+}
 .submit{
     height: 40px;
     width: 100px;
-    background-color: aqua;
+    background-color: rgb(0, 179, 255);
     font-family: fantasy;
     border-radius: 40px;
 
@@ -111,6 +115,7 @@ startGame:hover{
     height: 300px;
     width: 500px;
     margin-left: 250px;
+    margin-top: 10%;
     padding-bottom: 60%;
     border: solid white;
     border-radius: 10px;
@@ -135,10 +140,10 @@ startGame:hover{
     height: 250px;
     width: 500px;
     margin-left: 250px;
+    margin-top: 100px;
     border: solid white;
     border-radius: 10px;
     border-width: 5px;
-    align-content: center;
 }
 .northAmerica{
     background-color: yellow;
@@ -222,7 +227,7 @@ startGame:hover{
 .asiaQuiz{
     /* display: none; */
     background-image: url(https://media3.giphy.com/media/11MKLWSDvMVSp2/giphy.gif);
-    height: 300px;
+    height: 200px;
     width: 500px;
     margin-left: 250px;
     border: solid white;
@@ -245,7 +250,7 @@ startGame:hover{
 .europeQuiz{
     display: none;
     background-image: url(https://i.makeagif.com/media/4-01-2016/3wGcZ0.gif);
-    height: 500px;
+    height: 300px;
     width: 500px;
     margin-left: 250px;
     border: solid white;
