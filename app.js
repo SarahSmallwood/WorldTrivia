@@ -19,6 +19,44 @@
 //Level One
 //Seven Continents so seven rounds
 
+const questionList = {
+    '.antarcticaQ': {
+        'question': 'Antarctica contains what percentage of total ice on Earth?',
+        'options': ["50", '20', '90', '70'],
+        'answer': 'antarcticaQAnswerThree'
+    },
+    '.southAQuiz': {
+        'question': 'The worlds largest source of oxygen comes from where in South America',
+        'options': ['Andes Mountains', 'Patagonia Chile', 'Lake Titicaka', 'Amazon Rainforest'],
+        'answer': 'southAQuizAnswerThree'
+    },
+    '.northAQuiz': {
+        'question': 'What is considered the lowest geographical point in North America?',
+        'options': ['Death Valley', 'Mexico City', 'New Orleans, Lousiana', 'Great Salt Lake'],
+        'answer': 'northAQuizAnswerZero'
+    },
+    '.africaQuiz': {
+        'question': 'Which river in Africa is the planets longest?',
+        'options': ['Zambezi River', 'Nile River', 'Snake River', 'Congo River'],
+        'answer': 'africaQuizAnswerOne'
+    },
+    '.australiaQ': {
+        'question': 'In Australia, what is the largest ecosystem in the world?',
+        'options': ['The Outback', 'The Bush', 'Great Barrier Reef', 'Australian Alps'],
+        'answer': 'australiaQAnswerTwo'
+    },
+    '.asiaQuiz': {
+        'question': 'Asia holds the largest percentage of the worlds population. Which Asian country has the most people?',
+        'options': ['China', 'India', 'Vietnam', 'Bangladesh'],
+        'answer': 'asiaQuizAnswerOne'
+    },
+    '.europeQuiz': {
+        'question': 'The most visited attraction in Europe is ______________',
+        'options': ['Stone Henge', 'The Louvre', 'Eiffel Tower', 'Rome Colusseum'],
+        'answer': 'europeQuizAnswerOne'
+    }
+}
+
 function showDirections(){
     let howtoPlay = document.querySelector(".directions");
     if(howtoPlay.style.display == 'none'){
@@ -28,23 +66,25 @@ function showDirections(){
     }
 };
 
+function showQuiz(selector) {
+    let element = document.querySelector(selector);
 
-function showQuiz1(){
-    let ice = document.querySelector(".antarcticaQ");
-    if(ice.style.display == 'none'){
-        ice.style.display = 'block';
-    }else {
-        ice.style.display = 'none';
+    if (element.style.display === 'none' || element.style.display === ''){
+        element.style.display = 'block';
+    } else {
+        element.style.display = 'none';
     }
-};
-let q1 = { 
-    titleOne: "Antarctica contains what percentage of total ice on Earth?",
-    a1: [{ text: "50%", isCorrect: false },
-    { text: "20%", isCorrect: false },
-    { text: "90%", isCorrect: true },
-    { text: "70%", isCorrect: false },
-    ]
-};
+}
+
+
+// let q1 = { 
+//     titleOne: "Antarctica contains what percentage of total ice on Earth?",
+//     a1: [{ text: "50%", isCorrect: false },
+//     { text: "20%", isCorrect: false },
+//     { text: "90%", isCorrect: true },
+//     { text: "70%", isCorrect: false },
+//     ]
+// };
 
 // a -> 0, b -> 1 , c -> 2,.... d, e
 // list of continents -> [a, b, c, d, e....]
@@ -64,128 +104,112 @@ let q1 = {
     //  "question 2"
     // ].
     // ...
-// 
-// ]
-let aCard = document.querySelectorAll('.questions');
-let aButton = document.querySelectorAll('.submit');
-let score = 0;
 
-let questionList =
-    [
-        'Antarctica contains what percentage of total ice on Earth?',
-        'The worlds largest source of oxygen comes from where in South America',
-        'What is considered the lowest geographical point in North America?',
-        'Which river in Africa is the planets longest?',
-        'In Australia, what is the largest ecosystem in the world?',
-        'Asia holds the largest percentage of the worlds population. Which Asian country has the most people?',
-        'The most visited attraction in Europe is ______________'
+// let correctAnswerList = [2, 3, 0, 1, 2, 1, 1]
+// let answerList =
+//     [
+//         // Antartica answers
+//         [
+//             "50",
+//             '20',
+//             '90',
+//             '70'
+//         ],
+//         // South America answers
+//         [
+//             "Andes Mountains", 
+//             "Patagonia Chile", 
+//             "Lake Titicaka", 
+//             "Amazon Rainforest"
+//         ],
+//         // NA Answers 
+//         [
+//             "Death Valley", 
+//             "Mexico City",
+//             "New Orleans, Lousiana",
+//             "Great Salt Lake", 0
+//         ],
+//         // Africa Answers
+//         [
+//             "Zambezi River",
+//             "Nile River",
+//             "Snake River",
+//             "Congo River", 1
+//         ],
+//         // Australia Answers
+//         [
+//             "The Outback",
+//             "The Bush",
+//             "Great Barrier Reef",
+//             "Australian Alps", 2  
+//         ],
+//         // Asia Answers
+//         [
+//             "China",
+//             "India",
+//             "Vietnam",
+//             "Bangladesh", 1
+//         ],
+//         // europe answers
+//         [
+//             "Stone Henge",
+//             "The Louvre",
+//             "Eiffel Tower",
+//             "Rome Colusseum", 1
+//         ]
+//     ]
 
-    ]
-let correctAnswerList = [2, 3, 0, 1, 2, 1, 1]
-let answerList =
-    [
-        // Antartica answers
-        [
-            "50",
-            '20',
-            '90',
-            '70'
-        ],
-        // South America answers
-        [
-            "Andes Mountains", 
-            "Patagonia Chile", 
-            "Lake Titicaka", 
-            "Amazon Rainforest"
-        ],
-        // NA Answers 
-        [
-            "Death Valley", 
-            "Mexico City",
-            "New Orleans, Lousiana",
-            "Great Salt Lake"
-        ],
-        // Africa Answers
-        [
-            "Zambezi River",
-            "Nile River",
-            "Snake River",
-            "Congo River"
-        ],
-        // Australia Answers
-        [
-            "The Outback",
-            "The Bush",
-            "Great Barrier Reef",
-            "Australian Alps"  
-        ],
-        // Asia Answers
-        [
-            "China",
-            "India",
-            "Vietnam",
-            "Bangladesh"
-        ],
-        // europe answers
-        [
-            "Stone Henge",
-            "The Louvre",
-            "Eiffel Tower",
-            "Rome Colusseum"
-        ]
-    ]
+function showQuestion(selector) {
 
-function showQuestion(index, elementId, selector) {
+    let titleDiv = document.getElementById(`${selector}Question`);
+    titleDiv.textContent = questionList[selector].question;
+    
 
-    let titleDiv = document.getElementById(elementId);
-    titleDiv.textContent = questionList[index];
-
-    consoleToScreen(selector, answerList[index])
+    consoleToScreen(`${selector}`)
 }
 
-function consoleToScreen(selector, answerList) {
-    let answerOne = document.getElementById(`${selector}AnswerOne`);
-    answerOne.textContent = answerList[0]
+function consoleToScreen(selector) {
+    let optionOne = document.getElementById(`${selector}OptionOne`);
 
-    let answerTwo = document.getElementById(selector + 'AnswerTwo');
-    answerTwo.textContent = answerList[1]
+    optionOne.textContent = questionList[selector].options[0]
 
-    let answerThree = document.getElementById(selector + 'AnswerThree');
-    answerThree.textContent = answerList[2]
+    let optionTwo = document.getElementById(`${selector}OptionTwo`);
 
-    let answerFour = document.getElementById(selector + 'AnswerFour');
-    answerFour.textContent = answerList[3]
+    optionTwo.textContent = questionList[selector].options[1]
+
+    let optionThree = document.getElementById(`${selector}OptionThree`);
+
+    optionThree.textContent = questionList[selector].options[2]
+
+    let optionFour = document.getElementById(`${selector}OptionFour`);
+
+    optionFour.textContent = questionList[selector].options[3]
 }
 
-// // TODO - could be deleted
-// function showQuestion() {
-//     let titleDiv = document.getElementById('questionsAN');
-//     titleDiv.textContent = q1.titleOne;
-  
-//     let alts = document.querySelectorAll('.answersAN');
-//     consoletoScreen(`${alts}`);
-//     alts.forEach(function(element, index){
-//         element.textContent = q1.a1[index];
-//     });
-// }
-showQuestion(0, 'questionsAN', 'antarctica');
-showQuestion(1, 'questionsSA', 'southAmerica');
-showQuestion(2, 'questionsNA', 'northAmerica');
-showQuestion(3, 'questionsAF', 'africa');
-showQuestion(4, 'questionsAU', 'australia');
-showQuestion(5, 'questionsAA', 'asia');
-showQuestion(6, 'questionsEU', 'europe');
+function checkAnswer(selector) {
+    document.getElementById(questionList.selector.answer).checked
 
-
-
-function showQuiz2(){
-    let jungle = document.querySelector(".southAQuiz");
-    if(jungle.style.display == 'none'){
-        jungle.style.display = 'block';
-    } else {
-        jungle.style.display = 'none';
-    }
 }
+
+showQuestion('.antarcticaQ');
+showQuestion('.southAQuiz');
+showQuestion('.northAQuiz');
+showQuestion('.africaQuiz');
+showQuestion('.australiaQ');
+showQuestion('.asiaQuiz');
+showQuestion('.europeQuiz');
+
+
+// showQuestion(1, 'questionsSA', 'answersSA');
+// showQuestion(2, 'questionsNA', 'northAmerica');
+// showQuestion(3, 'questionsAF', 'africa');
+// showQuestion(4, 'questionsAU', 'australia');
+// showQuestion(5, 'questionsAA', 'asia');
+// showQuestion(6, 'questionsEU', 'europe');
+
+
+
+
 // let q2 = {
 //     title2: "The world's largest source of oxygen comes from where in South America?",
 //     a2:[{ text: "Andes Mountains", isCorrect: false },
@@ -199,14 +223,7 @@ function showQuiz2(){
 
 //   showQuestion2();
 
-function showQuiz3(){
-    let canyon = document.querySelector(".northAQuiz");
-    if(canyon.style.display == 'none'){
-        canyon.style.display = 'block';
-    }else {
-        canyon.style.display = 'none';
-    }
-}
+
 // let q3 = {
 //     title3: "What is considered the lowest geographical point in North America?",
 //     a3: [{ text: "Death Valley", isCorrect: true },
@@ -219,14 +236,7 @@ function showQuiz3(){
 // TODO - could be deleted
 
 
-function showQuiz4(){
-    let lion = document.querySelector(".africaQuiz");
-    if(lion.style.display == 'none'){
-        lion.style.display = 'block';
-    }else {
-        lion.style.display = 'none';
-    }
-}
+
 // let q4 = {
 //     title4: "Which river in Africa is the planet's longest?",
 //     a4: [{ text: "Zambezi River", isCorrect: false },
@@ -239,14 +249,7 @@ function showQuiz4(){
 // TODO - could be deleted
 
 
-function showQuiz5(){
-    let koala = document.querySelector(".australiaQ");
-    if(koala.style.display == 'none'){
-        koala.style.display = 'block';
-    }else {
-        koala.style.display = 'none';
-    }
-}
+
 // let q5 = {
 //     title5: [{ text: "The Outback", isCorrect: false },
 //     { text: "The Bush", isCorrect: false },
@@ -258,14 +261,7 @@ function showQuiz5(){
 // TODO - could be deleted
 
 
-function showQuiz6(){
-    let everest = document.querySelector(".asiaQuiz");
-    if(everest.style.display == 'none'){
-        everest.style.display = 'block';
-    }else {
-        everest.style.display = 'none';
-    }
-}
+
 // let q6 = {
 //     title6: "Asia holds the largest percentage of the world's population. Which Asian country has the most people?",
 //     a5: [{ button: "China", isCorrect: false },
@@ -280,14 +276,7 @@ function showQuiz6(){
 
 
 
-function showQuiz7(){
-    let tower = document.querySelector(".europeQuiz");
-    if(tower.style.display == 'none'){
-        tower.style.display = 'block';
-    }else {
-        tower.style.display = 'none';
-    }
-}
+
 // let q7 = {
 //     title7: "The most visited attraction in Europe is ______________",
 //     a7: [{ text: "Stone Henge", isCorrect: false },
@@ -297,42 +286,14 @@ function showQuiz7(){
 //     ] 
 // }
 
-let answerOption = document.querySelector('.answerList li');
-let submitButton = document.querySelector('.submit');
+
 
 // Answer options for questions functionality
-answerOption.forEach(option => {
-    option.addEventListener('click', function () {
-        console.log(submitButton.getAttribute('type'));
+    
+    
+    // Start the quiz right away
+    // loadQuestion(current);
+    // loadAnswers(current);
 
-        answerSelect(option, submitButton, answerOption);
-    });
-});
-// Functionality of submit button 
-submitButton.addEventListener('click', function () {
-    if (submitButton.getAttribute('type') === 'submit'){
-        buttonCheck();
-    } else {
-        buttonReset();
-    }
-});
-
-// Event to choose answer from selected question
-
-function answerSelect(event, submitButton) {
-    if (submitButton.getAttribute('type') === 'submit'){
-        for (let i = 0; i < answerOption; i++) {
-            const element = answerOption[i];
-            element.classList.remove('.submit')
-        }
-        event.classList.add('')
-    }
-};
-
-
-
-
-
-
-
+    
 

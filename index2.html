@@ -33,121 +33,206 @@
             
             <div class="board">
                 <div class="continents">
-                    <!-- Antartica Quiz  -->
-                <div id="questions">
-                    <button class="antarctica" onclick="showQuiz1()"> Antarctica</button>
+                    
+                <div id="quiz">
+                    <button class="antarctica" onclick="showQuiz('.antarcticaQ')"> Antarctica</button>
+                    <button class="southAmerica" onclick="showQuiz('.southAQuiz')"> South America </button>
+                    <button class="northAmerica" onclick="showQuiz('.northAQuiz')">North America</button> 
+                    <button class="africa" onclick="showQuiz('.africaQuiz')"> Africa </button>
+                    <button class="australia" onclick="showQuiz('.australiaQ')">Australia</button>
+                    <button class="asia" onClick="showQuiz('.asiaQuiz')">Asia</button>
+                    <button class="europe" onclick="showQuiz('.europeQuiz')">Europe</button>
                     <div class="antarcticaQ">
-                        <p id="questionsAN"></p>
-                        <div id="answersAN">
+                        <p id=".antarcticaQQuestion"></p>
+                        <div id="optionsAntarctica">
                             <ul>
-                                <button  onclick="checkAnswers()" id="submit"></button>
-                                <button  onclick="checkAnswers()" id="submit"></button>
-                                <button  onclick="checkAnswers()" id="submit"></button>
-                                <button  onclick="checkAnswers()" id="submit"></button>
+                                <div>
+                                    <input type="radio" id="antarcticaQAnswerOne" name="antarcticaQAnswer" value="0">
+                                    <label id=".antarcticaQOptionOne" ></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="antarcticaQAnswerTwo" name="antarcticaQAnswer" value="0">
+                                    <label id=".antarcticaQOptionTwo" ></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="antarcticaQAnswerThree" name="antarcticaQAnswer" value="0">
+                                    <label id=".antarcticaQOptionThree" ></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="antarcticaQAnswerFour" name="antarcticaQAnswer" value="0">
+                                    <label id=".antarcticaQOptionFour" ></label>
+                                </div>
+                                
                             </ul>
                         </div>
-                        <div class="score"></div>
+                        <div class="score">
+                            <button class="submit" onclick="checkAnswer('.antarcticaQ')"> Checking Voyage...</button>
+                        </div>
+
                     </div>
                     <div id="questions">
-                    <button class="southAmerica" onclick="showQuiz2()"> South America </button>
                     <div class="southAQuiz">
-                        <p id="questionsSA"></p>
-                        <div id="answersSA">
+                        <p id=".southAQuizQuestion"></p>
+                        <div id="options">
                             <ul>
-                                <button onclick="checkAnswers()" id="submit"></button>
-                                <button onclick="checkAnswers()" id="submit"></button>
-                                <button onclick="checkAnswers()" id="submit"></button>
-                                <button onclick="checkAnswers()" id="submit"></button>
+                                <div>
+                                    <input type="radio" id="southAQuizAnswerOne" name="southAQuizAnswer" value="0">
+                                    <label id=".southAOptionOne" ></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="southAQuizAnswerTwo" name="southAQuizAnswer" value="0">
+                                    <label id=".southAQuizOptionTwo" ></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="southAQuizAnswerThree" name="southAQuizAnswer" value="0">
+                                    <label id=".southAQuizOptionThree" ></label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="southAQuizAnswerFour" name="southAQuizAnswer" value="0">
+                                    <label id=".southAQuizOptionFour" ></label>
+                                </div> 
                             </ul>
                         </div>
                         
-                        <div class="score"></div>
+                        <div class="score">
+                            <button class="submit" onclick="checkAnswer('.southAQuiz')"> Checking Voyage...</button>
+                        </div>
                     </div>
-
+ 
                     <div id="questions">
-                    <button class="northAmerica" onclick="showQuiz3()">North America</button>
+                    <!-- <button class="northAmerica" onclick="showQuiz3()">North America</button>  -->
                     <div class="northAQuiz">
                         <p id="questionsNA"></p>
                         <div id="answersNA"></div>
                         <ul>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
+                            <div>
+                                <input type="radio" id="northAQuizAnswerOne" name="northAQuizAnswer" value="0">
+                                <label id=".southAOptionOne" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="northAQuizAnswerTwo" name="northAQuizAnswer" value="0">
+                                <label id=".northAQuizOptionTwo" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="northAQuizAnswerThree" name="northAQuizAnswer" value="0">
+                                <label id=".northAQuizOptionThree" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="northAQuizAnswerFour" name="northAQuizAnswer" value="0">
+                                <label id=".northAQuizOptionFour" ></label>
+                            </div> 
                         </ul>
                         
-                        <div class="score"></div>
+                        <div class="score">
+                            <button class="submit" onclick="checkAnswer('.northAQuiz')"> Checking Voyage...</button>
+                        </div>
                     </div>
 
                     <div id="questions">
-                    <button class="africa" onclick="showQuiz4()"> Africa </button>
+                    <!-- <button class="africa" onclick="showQuiz4()"> Africa </button> -->
                     <div class="africaQuiz">
                         <p id="questionsAF"></p>
                         <div id="answersAF"></div>
                         <ul>
-                            <button onclick="checkAnswers()" id="check"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
+                            <div>
+                                <input type="radio" id="africaQuizAnswerOne" name="africaQuizAnswer" value="0">
+                                <label id=".africaQuizOptionOne" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="africaQuizAnswerTwo" name="africaQuizAnswer" value="0">
+                                <label id=".africaQuizOptionTwo" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="africaQuizAnswerThree" name="africaQuizAnswer" value="0">
+                                <label id=".africaQuizOptionThree" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="africaQuizAnswerFour" name="africaQuizAnswer" value="0">
+                                <label id=".africaQuizOptionFour" ></label>
+                            </div> 
+
                         </ul>
                         
-                        <div class="score"></div>
+                        <div class="score">
+                            <button class="submit" onclick="checkAnswer('.africaQuiz')"> Checking Voyage...</button>
+                        </div>
                     </div>
 
 
 
-                    <button class="australia" onclick="showQuiz5()">Australia</button>
+                    <!-- <button class="australia" onclick="showQuiz5()">Australia</button> -->
                     <div class="australiaQ">
                         <p id="questionsAU"></p>
                         <div id="answersAU"></div>
                         <ul>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
+                            <div>
+                                <input type="radio" id="australiaQAnswerOne" name="australiaQAnswer" value="0">
+                                <label id=".australiaQOptionOne" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="australiaQAnswerTwo" name="australiaQAnswer" value="0">
+                                <label id=".australiaQOptionTwo" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="australiaQAnswerThree" name="australiaQAnswer" value="0">
+                                <label id=".australiaQOptionThree" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="australiaQAnswerFour" name="australiaQAnswer" value="0">
+                                <label id=".australiaQOptionFour" ></label>
+                            </div> 
+
                         </ul>
             
-                        <div class="score"></div>
+                        <div class="score">
+                            <button class="submit" onclick="checkAnswer('.australiaQ')"> Checking Voyage...</button>
+                        </div>
                     </div>
                     
                     <div class="asiaQuiz">
                         <p id="questionsAA"></p>
                         <div id="answersAA"></div>
                         <ul>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
+                            <div>
+                                <input type="radio" id="asiaQuizAnswerOne" name="asiaQuizAnswer" value="0">
+                                <label id=".asiaQuizOptionOne" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="asiaQuizAnswerTwo" name="asiaQuizAnswer" value="0">
+                                <label id=".asiaQuizOptionTwo" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="asiaQuizAnswerThree" name="asiaQuizAnswer" value="0">
+                                <label id=".asiaQuizOptionThree" ></label>
+                            </div>
+                            <div>
+                                <input type="radio" id="asiaQuizAnswerFour" name="asiaQuizAnswer" value="0">
+                                <label id=".asiaQuizOptionFour" ></label>
+                            </div> 
                         </ul>
             
-                        <div class="score"></div>
+                        <div class="score">
+                            <button class="submit" onclick="checkAnswer('.australiaQ')"> Checking Voyage...</button>
+                        </div>
                     </div>
-                    <button class="europe" onclick="showQuiz7()">Europe</button>
+                    <!-- <button class="europe" onclick="showQuiz7()">Europe</button> -->
                     <div class="europeQuiz">
                         <p id="questionsEU"></p>
                         <div id="answersEU"></div>
                         <ul>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
-                            <button onclick="checkAnswers()" id="submit"></button>
+                            <li  tabindex="0" ></li>
+                            <li  tabindex="1" ></li>
+                            <li  tabindex="2" ></li>
+                            <li  tabindex="3" ></li>
                         </ul>
                         
-                        <div id="score"></div>
+                        <div id="score">
+                            <button class="submit"> Checking Voyage...</button>
+                        </div>
                     </div>
 
                     </div>
-            </div>
-
-
-
-
-            <!-- Game Options Container  -->
-            <div class="triviaBox"></div>
-             <!-- Button Container for Game Options -->
-              <!---->
-               <!---->
-                <!---->
+            </div> 
             </div>
 
 

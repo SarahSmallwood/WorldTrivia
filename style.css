@@ -5,7 +5,7 @@ body{
     border-radius: 5px;
     border-width: 8px;
 }
-startGame{
+.startGame{
     border: solid white;
     display: flex;
     align-items: center;
@@ -83,7 +83,7 @@ startGame:hover{
     flex-direction: column;
     justify-content: space-between;
 }
-#submit{
+.submit{
     height: 40px;
     width: 100px;
     background-color: aqua;
@@ -213,7 +213,7 @@ startGame:hover{
     opacity: 0.5;
 }
 .asiaQuiz{
-    display: none;
+    /* display: none; */
     background-image: url(https://media3.giphy.com/media/11MKLWSDvMVSp2/giphy.gif);
     height: 400px;
     width: 500px;
