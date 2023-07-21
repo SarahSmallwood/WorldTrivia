@@ -18,12 +18,6 @@
 // Location Info
 //Level One
 //Seven Continents so seven rounds
-let score = 0
-
-
-const consoletoScreen=(alts)=>{
-
-}
 
 function showDirections(){
     let howtoPlay = document.querySelector(".directions");
@@ -32,7 +26,7 @@ function showDirections(){
     }else {
         howtoPlay.style.display = 'none';
     }
-}
+};
 
 
 function showQuiz1(){
@@ -42,7 +36,7 @@ function showQuiz1(){
     }else {
         ice.style.display = 'none';
     }
-}
+};
 let q1 = { 
     titleOne: "Antarctica contains what percentage of total ice on Earth?",
     a1: [{ text: "50%", isCorrect: false },
@@ -50,7 +44,7 @@ let q1 = {
     { text: "90%", isCorrect: true },
     { text: "70%", isCorrect: false },
     ]
-}
+};
 
 // a -> 0, b -> 1 , c -> 2,.... d, e
 // list of continents -> [a, b, c, d, e....]
@@ -72,6 +66,9 @@ let q1 = {
     // ...
 // 
 // ]
+let aCard = document.querySelectorAll('.questions');
+let aButton = document.querySelectorAll('.submit');
+let score = 0;
 
 let questionList =
     [
@@ -189,14 +186,14 @@ function showQuiz2(){
         jungle.style.display = 'none';
     }
 }
-let q2 = {
-    title2: "The world's largest source of oxygen comes from where in South America?",
-    a2:[{ text: "Andes Mountains", isCorrect: false },
-    { text: "Patagonia Chile", isCorrect: false },
-    { text: "Lake Titicaca", isCorrect: false },
-    { text: "Amazon Rainforest", isCorrect: true }
-    ]
-}
+// let q2 = {
+//     title2: "The world's largest source of oxygen comes from where in South America?",
+//     a2:[{ text: "Andes Mountains", isCorrect: false },
+//     { text: "Patagonia Chile", isCorrect: false },
+//     { text: "Lake Titicaca", isCorrect: false },
+//     { text: "Amazon Rainforest", isCorrect: true }
+//     ]
+// }
 
 // TODO - could be deleted
 
@@ -210,14 +207,14 @@ function showQuiz3(){
         canyon.style.display = 'none';
     }
 }
-let q3 = {
-    title3: "What is considered the lowest geographical point in North America?",
-    a3: [{ text: "Death Valley", isCorrect: true },
-    { text: "Mexico City", isCorrect: false },
-    { text: "New Orleans, Lousiana", isCorrect: false },
-    { text: "Great Salt Lake", isCorrect: false }
-    ]  
-}
+// let q3 = {
+//     title3: "What is considered the lowest geographical point in North America?",
+//     a3: [{ text: "Death Valley", isCorrect: true },
+//     { text: "Mexico City", isCorrect: false },
+//     { text: "New Orleans, Lousiana", isCorrect: false },
+//     { text: "Great Salt Lake", isCorrect: false }
+//     ]  
+// }
 
 // TODO - could be deleted
 
@@ -230,14 +227,14 @@ function showQuiz4(){
         lion.style.display = 'none';
     }
 }
-let q4 = {
-    title4: "Which river in Africa is the planet's longest?",
-    a4: [{ text: "Zambezi River", isCorrect: false },
-    { text: "Nile River", isCorrect: true },
-    { text: "Snake River", isCorrect: false },
-    { text: "Congo River", isCorrect: false }
-    ]  
-}
+// let q4 = {
+//     title4: "Which river in Africa is the planet's longest?",
+//     a4: [{ text: "Zambezi River", isCorrect: false },
+//     { text: "Nile River", isCorrect: true },
+//     { text: "Snake River", isCorrect: false },
+//     { text: "Congo River", isCorrect: false }
+//     ]  
+// }
 
 // TODO - could be deleted
 
@@ -250,13 +247,13 @@ function showQuiz5(){
         koala.style.display = 'none';
     }
 }
-let q5 = {
-    title5: [{ text: "The Outback", isCorrect: false },
-    { text: "The Bush", isCorrect: false },
-    { text: "Great Barrier Reef", isCorrect: true },
-    { text: "Australian Alps", isCorrect: false }
-    ]
-} 
+// let q5 = {
+//     title5: [{ text: "The Outback", isCorrect: false },
+//     { text: "The Bush", isCorrect: false },
+//     { text: "Great Barrier Reef", isCorrect: true },
+//     { text: "Australian Alps", isCorrect: false }
+//     ]
+// } 
 
 // TODO - could be deleted
 
@@ -269,14 +266,14 @@ function showQuiz6(){
         everest.style.display = 'none';
     }
 }
-let q6 = {
-    title6: "Asia holds the largest percentage of the world's population. Which Asian country has the most people?",
-    a5: [{ text: "China", isCorrect: false },
-    { text: "India", isCorrect: true },
-    { text: "Vietnam", isCorrect: false },
-    { text: "Bangladesh", isCorrect: false }
-    ]  
-} 
+// let q6 = {
+//     title6: "Asia holds the largest percentage of the world's population. Which Asian country has the most people?",
+//     a5: [{ button: "China", isCorrect: false },
+//     { text: "India", isCorrect: true },
+//     { text: "Vietnam", isCorrect: false },
+//     { text: "Bangladesh", isCorrect: false }
+//     ]  
+// } 
 
 
 // TODO - could be deleted
@@ -291,14 +288,14 @@ function showQuiz7(){
         tower.style.display = 'none';
     }
 }
-let q7 = {
-    title7: "The most visited attraction in Europe is ______________",
-    a7: [{ text: "Stone Henge", isCorrect: false },
-    { text: "The Louvre", isCorrect: true },
-    { text: "Eiffel Tower", isCorrect: false },
-    { text: "Rome Colusseum", isCorrect: false }
-    ] 
-}
+// let q7 = {
+//     title7: "The most visited attraction in Europe is ______________",
+//     a7: [{ text: "Stone Henge", isCorrect: false },
+//     { text: "The Louvre", isCorrect: true },
+//     { text: "Eiffel Tower", isCorrect: false },
+//     { text: "Rome Colusseum", isCorrect: false }
+//     ] 
+// }
 
 let answerOption = document.querySelector('.answerList li');
 let submitButton = document.querySelector('.submit');
@@ -312,21 +309,25 @@ answerOption.forEach(option => {
     });
 });
 // Functionality of submit button 
-submitButton.addEventListener('click', function ()) {
+submitButton.addEventListener('click', function () {
     if (submitButton.getAttribute('type') === 'submit'){
         buttonCheck();
     } else {
         buttonReset();
     }
-};
+});
 
 // Event to choose answer from selected question
 
 function answerSelect(event, submitButton) {
-    if (submitButton.getAttribute('type')=== 'submit'){
-        for (let i = 0; i < answerOption; i++)
+    if (submitButton.getAttribute('type') === 'submit'){
+        for (let i = 0; i < answerOption; i++) {
+            const element = answerOption[i];
+            element.classList.remove('.submit')
+        }
+        event.classList.add('')
     }
-}
+};
 
 
 
