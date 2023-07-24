@@ -191,21 +191,21 @@ function checkAnswer(selector) {
 
 }
 
-showQuestion('.antarcticaQ');
-showQuestion('.southAQuiz');
-showQuestion('.northAQuiz');
-showQuestion('.africaQuiz');
-showQuestion('.australiaQ');
-showQuestion('.asiaQuiz');
-showQuestion('.europeQuiz');
+// showQuestion('.antarcticaQ');
+// showQuestion('.southAQuiz');
+// showQuestion('.northAQuiz');
+// showQuestion('.africaQuiz');
+// showQuestion('.australiaQ');
+// showQuestion('.asiaQuiz');
+// showQuestion('.europeQuiz');
 
 
-// showQuestion(1, 'questionsSA', 'answersSA');
-// showQuestion(2, 'questionsNA', 'northAmerica');
-// showQuestion(3, 'questionsAF', 'africa');
-// showQuestion(4, 'questionsAU', 'australia');
-// showQuestion(5, 'questionsAA', 'asia');
-// showQuestion(6, 'questionsEU', 'europe');
+showQuestion(1, 'questionsSA', 'answersSA');
+showQuestion(2, 'questionsNA', 'northAmerica');
+showQuestion(3, 'questionsAF', 'africa');
+showQuestion(4, 'questionsAU', 'australia');
+showQuestion(5, 'questionsAA', 'asia');
+showQuestion(6, 'questionsEU', 'europe');
 
 
 
