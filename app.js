@@ -5,24 +5,35 @@
 // Location Info
 //Level One
 //Seven Continents so seven rounds
+
+//function to show directions
+function showDirections(){
+    let howtoPlay = document.querySelector(".directions");
+    if(howtoPlay.style.display == 'none'){
+        howtoPlay.style.display = 'block';
+    }else {
+        howtoPlay.style.display = 'none';
+    }
+};
+
+showDirections();
+
+
+
 (function () {
     
+    
     function showQuiz(){
-    // variable to store the HTML output
+    
     const output = [];
 
-    // for each question...
     quizCard.forEach(
-      (currentQuestion, questionNumber) => {
+    (currentQuestion, questionNumber) => {
 
-        // variable to store the list of possible answers
-        const answers = [];
+    const answers = [];
+    for(number in currentQuestion.answers){
 
-        // and for each available answer...
-        for(number in currentQuestion.answers){
-
-          // ...add an HTML radio button
-          answers.push(
+        answers.push(
             `<label>
               <input type="radio" name="question${questionNumber}" value="${number}">
               ${number} :
@@ -41,22 +52,20 @@
       }
     );
 
-    // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
-  }
+}
 
   function showResults(){
 
-    // gather answer containers from our quiz
+    //Answer Container
     const answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keep track of user's answers
+    //User answers
     let numCorrect = 0;
 
-    // for each question...
+    
     quizCard.forEach( (currentQuestion, questionNumber) => {
 
-      // find selected answer
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
@@ -65,15 +74,49 @@
       if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
+        if (numCorrect >= question.length) {
 
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
-      }
+            quiz.innerHTML = "<h2>You got " + correct + " of " + question.length + " questions correct</h2>";
+        
+            if(correct == 0){
+              quiz.innerHTML += "<h2> Catch more flights! You need more travel experience! </h2>";
+            } 
+          
+            if(correct == 1){
+              quiz.innerHTML += "<h2> Beginner World Traveler! Take more adventures! </h2>";
+            } 
+        
+            if(correct == 2){
+              quiz.innerHTML += "<h2> Travel Level : Basic </h2>";
+            } 
+        
+            if(correct == 3){
+              quiz.innerHTML += "<h2> Is this your first time around the world? </h2>";
+            } 
+            if(correct == 4){
+                quiz.innerHTML += "<h2> You're Collecting Passport Stamps! Great Job! </h2>";
+            }
+            if(correct == 5){
+                quiz.innerHTML += "<h2> Travel Level: Voyager! Keep up the great work! </h2>";
+            }
+            if(correct == 6){
+                quiz.innerHTML += "<h2> Travel Level : EXPERT </h2>";
+            }
+            if(correct == 7){
+                quiz.innerHTML += "<h2> Travel Level : EXPERT </h2>";
+            }
+        
+            get("quiz_status").innerHTML = "Travel completed";
+            //reset everything for the next quiz
+            numCorrect = 0;
+            correct = 0;
+        
+            quiz.innerHTML += "<button onclick='restartQuiz()'>BACK HOME</button>";
+        
+            return false;
+          }
+          get("quiz_status").innerHTML = "Voyage " + (numCorrect + 1) + " of " + question.length;
+      } 
     });
 
     // show number of correct answers out of total
@@ -84,17 +127,16 @@
     cards[currentCard].classList.remove('active-card');
     cards[n].classList.add('active-card');
     currentCard = n;
+    // $("quizImage").src = quiz[currentQuestion].image;
     if(currentCard === 0){
       previousButton.style.display = 'none';
-    }
-    else{
+    } else{
       previousButton.style.display = 'inline-block';
     }
     if(currentCard === cards.length-1){
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
-    }
-    else{
+    } else{
       nextButton.style.display = 'inline-block';
       submitButton.style.display = 'none';
     }
@@ -109,18 +151,6 @@
   }
 
 
-
-// Function to show game directions
-
-function showDirections(){
-    let howtoPlay = document.querySelector(".directions");
-    if(howtoPlay.style.display == 'none'){
-        howtoPlay.style.display = 'block';
-    }else {
-        howtoPlay.style.display = 'none';
-    }
-};
-
 //function to show quiz
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
@@ -132,6 +162,7 @@ const submitButton = document.getElementById('submit');
 // and will be called upon in later function to keep score of the quiz
 const quizCard = [
     {
+        img: "https://www.betterphotography.com/images/Blog2022/BoothIsland.gif",
         question: "Antarctica contains what percentage of total ice on Earth?",
         answers: {
            0: "50",
@@ -142,6 +173,7 @@ const quizCard = [
         correctAnswer: "2"
     },
     {
+        img: "https://media0.giphy.com/media/xyvHOUQzfMfba/giphy.gif",
         question: "The worlds largest source of oxygen comes from where in South America",
         answers: {
            0: "Andes Mountains", 
@@ -152,6 +184,7 @@ const quizCard = [
         correctAnswer: "3"
     },
     {
+        img: "https://64.media.tumblr.com/a964458bee35dd2c7411a70b0125c437/tumblr_npeokel6ip1qzxxsgo1_500.gif",
         question: "What is considered the lowest geographical point in North America?",
         answers: {
             0: "Death Valley", 
@@ -163,6 +196,7 @@ const quizCard = [
 
     },
     {
+        img: "https://media4.giphy.com/media/2jMjVBTC1cwaiIUcN7/giphy.gif",
         question: "Which river in Africa is the planets longest?",
         answers: {
             0: "Zambezi River",
@@ -173,6 +207,7 @@ const quizCard = [
         correctAnswer: "1"
     },
     {
+        img: "https://i.gifer.com/Irq.gif",
         question: "In Australia, what is the largest ecosystem in the world?",
         answers: {
             0: "The Outback",
@@ -183,6 +218,7 @@ const quizCard = [
         correctAnswer: "2"
     },
     {
+        img: "https://media3.giphy.com/media/11MKLWSDvMVSp2/giphy.gif",
         question: "Asia holds the largest percentage of the worlds population. Which Asian country has the most people?",
         answers: {
             0: "China",
@@ -193,6 +229,7 @@ const quizCard = [
         correctAnswer: "1"
     },
     {
+        img:"https://i.makeagif.com/media/4-01-2016/3wGcZ0.gif",
         question: "The most visited attraction in Europe is ______________",
         answers: {
             0: "Stone Henge",
@@ -205,80 +242,18 @@ const quizCard = [
 ];
 
 showQuiz();
-
 const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 const cards = document.querySelectorAll(".cards");
-let currentCard = 0;
-  
-    // Show the first slide
- showCard(currentCard);
-  
-    // Event listeners
+let currentCard = 0;  
+
+
+// Show the first slide
+showCard(currentCard);
+
+
 submitButton.addEventListener('click', showResults);
 previousButton.addEventListener("click", showPreviousCard);
 nextButton.addEventListener("click", showNextCard);
 
-
 })();
-
-// function showQuestion(selector) {
-
-//     let titleDiv = document.getElementById(`${selector}Question`);
-//     titleDiv.textContent = questionList[selector].question;
-    
-
-//     consoleToScreen(`${selector}`)
-// }
-
-// function consoleToScreen(selector) {
-//     let optionOne = document.getElementById(`${selector}OptionOne`);
-
-//     optionOne.textContent = questionList[selector].options[0]
-
-//     let optionTwo = document.getElementById(`${selector}OptionTwo`);
-
-//     optionTwo.textContent = questionList[selector].options[1]
-
-//     let optionThree = document.getElementById(`${selector}OptionThree`);
-
-//     optionThree.textContent = questionList[selector].options[2]
-
-//     let optionFour = document.getElementById(`${selector}OptionFour`);
-
-//     optionFour.textContent = questionList[selector].options[3]
-// }
-// const submitButton = document.getElementById('submit');
-// const resultsContainer = document.getElementById('results');
-
-
-// function checkAnswer(selector) {
-//     document.getElementById(questionList.selector.answer).checked
-
-// }
-
-// // Calling function to show questions
-
-// showQuestion('.antarcticaQ');
-// showQuestion('.southAQuiz');
-// showQuestion('.northAQuiz');
-// showQuestion('.africaQuiz');
-// showQuestion('.australiaQ');
-// showQuestion('.asiaQuiz');
-// showQuestion('.europeQuiz');
-
-
-
-
-// // 
-
-
-// // Answer options for questions functionality
-    
-    
-//     // Start the quiz right away
-//     // loadQuestion(current);
-//     // loadAnswers(current);
-
-    
-
