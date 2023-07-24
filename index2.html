@@ -16,7 +16,9 @@
         <div class="game">
             <div class="gameDirections">
             <button class="directionsButton" onclick="showDirections()"> Travel Directions </button>
-            </div>
+            <button id="previous">Previous Question</button>
+            <button id="next">Next Question</button>
+        </div>
             <div class="directions">
                 <p>
                     Select Continent on left to start your adventure!
@@ -33,16 +35,12 @@
             </div>
             
             <div class="board"> 
-                
                     <div class="trivia">
                     <div id="quiz">  </div>
-                        
-                    <button id="previous">Previous Question</button>
-                    <button id="next">Next Question</button> 
                     <div id="results"></div>
             </div>
-            </div>
-                    <button id="submit" onclick="checkAnswer()"> Check Voyage...</button>
+                    <button id="submit" onclick="showResults()"> Check Voyage...</button>
+                    <button id="restart-button">Restart Journey!</button>
 
 
         <script src="app.js" async defer></script>

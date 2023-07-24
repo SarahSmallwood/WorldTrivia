@@ -74,60 +74,64 @@ showDirections();
       if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
-        if (numCorrect >= question.length) {
+        if (numCorrect >= 0) {
 
-            quiz.innerHTML = "<h2>You got " + correct + " of " + question.length + " questions correct</h2>";
+            quiz.innerHTML = "<h2>You got " + numCorrect + " of 7 questions correct</h2>";
         
-            if(correct == 0){
+            if(numCorrect == 0){
               quiz.innerHTML += "<h2> Catch more flights! You need more travel experience! </h2>";
             } 
           
-            if(correct == 1){
+            if(numCorrect == 1){
               quiz.innerHTML += "<h2> Beginner World Traveler! Take more adventures! </h2>";
             } 
         
-            if(correct == 2){
+            if(numCorrect == 2){
               quiz.innerHTML += "<h2> Travel Level : Basic </h2>";
             } 
         
-            if(correct == 3){
+            if(numCorrect == 3){
               quiz.innerHTML += "<h2> Is this your first time around the world? </h2>";
             } 
-            if(correct == 4){
+            if(numCorrect == 4){
                 quiz.innerHTML += "<h2> You're Collecting Passport Stamps! Great Job! </h2>";
             }
-            if(correct == 5){
+            if(numCorrect == 5){
                 quiz.innerHTML += "<h2> Travel Level: Voyager! Keep up the great work! </h2>";
             }
-            if(correct == 6){
+            if(numCorrect == 6){
                 quiz.innerHTML += "<h2> Travel Level : EXPERT </h2>";
             }
-            if(correct == 7){
-                quiz.innerHTML += "<h2> Travel Level : EXPERT </h2>";
+            if(numCorrect == 7){
+                quiz.innerHTML += "<h2> Travel Level : MASTER </h2>";
             }
-        
-            get("quiz_status").innerHTML = "Travel completed";
+            // TODO DELETE DOESNT WORK
+            // get("quiz_status").innerHTML = "Travel completed";
             //reset everything for the next quiz
-            numCorrect = 0;
-            correct = 0;
+            
         
-            quiz.innerHTML += "<button onclick='restartQuiz()'>BACK HOME</button>";
+            // quiz.innerHTML += "<button onclick='restartQuiz()'>Restart Journey </button>";
         
             return false;
           }
-          get("quiz_status").innerHTML = "Voyage " + (numCorrect + 1) + " of " + question.length;
+          get("quiz_status").innerHTML = "Voyage " + (numCorrect + 1) + " of 7";
       } 
     });
+    
+  }
 
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${quizCard.length}`;
+  function restartQuiz() {
+    let currentCard = 0;
+    showCard(currentCard)
   }
 
   function showCard(n) {
     cards[currentCard].classList.remove('active-card');
     cards[n].classList.add('active-card');
     currentCard = n;
-    // $("quizImage").src = quiz[currentQuestion].image;
+    document.querySelectorAll('.active-card')[0].style.backgroundImage = `url(${quizCard[currentCard].img})`
+    // change quiz card image 
+
     if(currentCard === 0){
       previousButton.style.display = 'none';
     } else{
@@ -240,20 +244,21 @@ const quizCard = [
         correctAnswer: "1"
     }
 ];
-
+// Call function to show quiz cards 
 showQuiz();
 const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 const cards = document.querySelectorAll(".cards");
-let currentCard = 0;  
+const restartButton = document.getElementById("restart-button");
+let currentCard = 0;
 
-
-// Show the first slide
+// Show the first quiz card
 showCard(currentCard);
 
 
 submitButton.addEventListener('click', showResults);
 previousButton.addEventListener("click", showPreviousCard);
 nextButton.addEventListener("click", showNextCard);
+restartButton.addEventListener("click", restartQuiz);
 
 })();

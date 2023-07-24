@@ -5,6 +5,7 @@ body{
     border-radius: 5px;
     border-width: 8px;
     width: 100%;
+    height: 100%;
 }
 .startGame{
     border: solid white;
@@ -80,7 +81,6 @@ startGame:hover{
     background-color: aqua;
     font-family: fantasy;
     border-radius: 40px;
-    position: fixed;
 }
 #next{
     height: 40px;
@@ -88,7 +88,8 @@ startGame:hover{
     background-color: aqua;
     font-family: fantasy;
     border-radius: 40px;
-    position: fixed;
+    display: flex;
+    justify-content: flex-end;
 }
 #previous{
     height: 40px;
@@ -96,7 +97,6 @@ startGame:hover{
     background-color: aqua;
     font-family: fantasy;
     border-radius: 40px;
-    position: fixed;
 }
 
 /* .antarcticaQ{
@@ -181,14 +181,17 @@ startGame:hover{
     border-radius: 10px;
     border-width: 5px;
 } */
-#question{
-    font-size: 30px;
+.question{
+    font-family: fantasy;
+    font-size: 20px;
+    background-color: blanchedalmond;
     margin-bottom: 10px;
 }
-#answers{
-    
+.answers{
+    font-family: fantasy;
     margin-bottom: 20px;
     text-align: left;
+    color: blanchedalmond;
     
 }
 .answers label{
@@ -196,17 +199,31 @@ startGame:hover{
     margin-bottom: 10px;
 }
 .cards{
-    position: center;
-    width: 60%;
-    height: 300px;
+    position: fixed;
+    width: 100%;
+    height: 250px;
     z-index: 1;
     opacity: 0;
     transition: opacity 0.5s;
     background-color: antiquewhite;
+    border: solid white;
+    border-width: 5px;
 }
 .active-card{
     opacity: 1;
     background-image: url(https://www.betterphotography.com/images/Blog2022/BoothIsland.gif);
+    position: relative;
+}
+
+#restart-button {
+    display: none;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(90, 88, 88);
+    font-family: fantasy;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
 }
   
 
