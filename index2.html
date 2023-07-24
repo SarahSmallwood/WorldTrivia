@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="title"> Around the World Adventures </div>
+        <div class="title"> Around the World Adventures Quiz 
+        </div>
 
         <div class="game">
             <div class="gameDirections">
@@ -30,18 +31,15 @@
 
                 </p>
             </div>
-            <div id="score">
-                <button class="submit" onclick="checkAnswer()"> Checking Voyage...</button>
-            </div>
             
-            <div class="board">
+            <div class="board"> 
                 <div class="continents">
                     <button class="antarctica" onclick="showQuiz('.antarcticaQ')"> Antarctica</button>
                     <button class="southAmerica" onclick="showQuiz('.southAQuiz')"> South America </button>
                     <button class="northAmerica" onclick="showQuiz('.northAQuiz')">North America</button> 
                     <button class="africa" onclick="showQuiz('.africaQuiz')"> Africa </button>
                     <button class="australia" onclick="showQuiz('.australiaQ')">Australia</button>
-                    <button class="asia" onClick="showQuiz('.asiaQuiz')">Asia</button>
+                    <button class="asia" onclick="showQuiz('.asiaQuiz')">Asia</button>
                     <button class="europe" onclick="showQuiz('.europeQuiz')">Europe</button>
                     
                 <div id="quiz">
@@ -93,11 +91,11 @@
                                 </div> 
                             </ul>
                         </div>
-                        
+                    </div>    
  
                     <div id="questions">
                     <!-- <button class="northAmerica" onclick="showQuiz3()">North America</button>  -->
-                    <div class="northAQuiz">
+                    <div id="northAQuiz">
                         <p id="questionsNA"> What is considered the lowest geographical point in North America?</p>
                         <div id="answersNA"></div>
                         <ul>
@@ -118,12 +116,14 @@
                                 <label id=".northAQuizOptionFour">Great Salt Lake</label>
                             </div> 
                         </ul>
+                    </div>
+            
 
                     <div id="questions">
                     <!-- <button class="africa" onclick="showQuiz4()"> Africa </button> -->
                     <div class="africaQuiz">
                         <p id="questionsAF"> Which river in Africa is the planets longest?</p>
-                        <div id="answersAF"></div>
+                        <div id="answersAF">
                         <ul>
                             <div>
                                 <input type="radio" id="africaQuizAnswerOne" name="africaQuizAnswer" value="0">
@@ -144,11 +144,12 @@
 
                         </ul>
                     </div>
+                    </div>
 
                     <!-- <button class="australia" onclick="showQuiz5()">Australia</button> -->
                     <div class="australiaQ">
                         <p id="questionsAU">In Australia, what is the largest ecosystem in the world?</p>
-                        <div id="answersAU"></div>
+                        <div id="answersAU">
                         <ul>
                             <div>
                                 <input type="radio" id="australiaQAnswerOne" name="australiaQAnswer" value="0">
@@ -168,6 +169,7 @@
                             </div> 
 
                         </ul>
+                    </div>
                     </div>
                     
                     <div class="asiaQuiz">
@@ -191,13 +193,13 @@
                                 <label id=".asiaQuizOptionFour" >Bangladesh</label>
                             </div> 
                         </ul>
-            
+                    </div>
                     
                     </div>
                     <!-- <button class="europe" onclick="showQuiz7()">Europe</button> -->
                     <div class="europeQuiz">
                         <p id="questionsEU"> The most visited attraction in all of Europe is ______________.</p>
-                        <div id="answersEU"></div>
+                        <div id="answersEU">
                         <ul>
                             <div>
                                 <input type="radio" id="europeQuizAnswerOne" name="europeQuizAnswer" value="0">
@@ -217,12 +219,18 @@
                             </div>  
                         </ul>
                     </div>
-
                     </div>
-            </div> 
-            
+
+                </div>
+                    
             </div>
-        
+            
+            
+        </div>
+    </div>
+</div>
+        <button id="submit" onclick="checkAnswer()"> Check Voyage...</button>
+    <div id="results"></div>  
 
 
         

@@ -6,43 +6,108 @@
 //Level One
 //Seven Continents so seven rounds
 
-const questionList = {
-    '.antarcticaQ': {
-        'question': 'Antarctica contains what percentage of total ice on Earth?',
-        'options': ["50", '20', '90', '70'],
-        'answer': 'antarcticaQAnswerThree'
-    },
-    '.southAQuiz': {
-        'question': 'The worlds largest source of oxygen comes from where in South America',
-        'options': ['Andes Mountains', 'Patagonia Chile', 'Lake Titicaka', 'Amazon Rainforest'],
-        'answer': 'southAQuizAnswerThree'
-    },
-    '.northAQuiz': {
-        'question': 'What is considered the lowest geographical point in North America?',
-        'options': ['Death Valley', 'Mexico City', 'New Orleans, Lousiana', 'Great Salt Lake'],
-        'answer': 'northAQuizAnswerZero'
-    },
-    '.africaQuiz': {
-        'question': 'Which river in Africa is the planets longest?',
-        'options': ['Zambezi River', 'Nile River', 'Snake River', 'Congo River'],
-        'answer': 'africaQuizAnswerOne'
-    },
-    '.australiaQ': {
-        'question': 'In Australia, what is the largest ecosystem in the world?',
-        'options': ['The Outback', 'The Bush', 'Great Barrier Reef', 'Australian Alps'],
-        'answer': 'australiaQAnswerTwo'
-    },
-    '.asiaQuiz': {
-        'question': 'Asia holds the largest percentage of the worlds population. Which Asian country has the most people?',
-        'options': ['China', 'India', 'Vietnam', 'Bangladesh'],
-        'answer': 'asiaQuizAnswerOne'
-    },
-    '.europeQuiz': {
-        'question': 'The most visited attraction in Europe is ______________',
-        'options': ['Stone Henge', 'The Louvre', 'Eiffel Tower', 'Rome Colusseum'],
-        'answer': 'europeQuizAnswerOne'
+function buildQuiz(){
+    // variable to store the HTML output
+    const output = [];
+
+    // for each question...
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
+
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
+
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`
+        );
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
+
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if(currentSlide === 0){
+      previousButton.style.display = 'none';
     }
-}
+    else{
+      previousButton.style.display = 'inline-block';
+    }
+    if(currentSlide === slides.length-1){
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+    }
+    else{
+      nextButton.style.display = 'inline-block';
+      submitButton.style.display = 'none';
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+
 
 // Function to show game directions
 
@@ -57,32 +122,24 @@ function showDirections(){
 
 //function to show quiz
 
-function showQuiz(selector) {
-    let element = document.querySelector(selector);
-
-    if (element.style.display === 'none' || element.style.display === ''){
-        element.style.display = 'block';
-    } else {
-        element.style.display = 'none';
-    }
-}
-
 
 // Quiz answer Data in array 
 // correct answer is underneath each quiz answer set 
 // and will be called upon in later function to keep score of the quiz
 const quizAnswers = [
     {
-        a1: {
+        question: "Antarctica contains what percentage of total ice on Earth?",
+        answers: {
            0: "50",
            1: '20',
            2:'90',
            3:'70'
         },
-        correctAnswer: 2
+        correctAnswer: "2"
     },
     {
-        a2: {
+        question: "The worlds largest source of oxygen comes from where in South America",
+        answers: {
            0: "Andes Mountains", 
            1: "Patagonia Chile", 
            2:"Lake Titicaka", 
@@ -91,7 +148,8 @@ const quizAnswers = [
         correctAnswer: 3
     },
     {
-        a3: {
+        question: "What is considered the lowest geographical point in North America?",
+        answers: {
             0: "Death Valley", 
             1: "Mexico City",
             2: "New Orleans, Lousiana",
@@ -101,7 +159,8 @@ const quizAnswers = [
 
     },
     {
-        a4: {
+        question: "Which river in Africa is the planets longest?",
+        answers: {
             0: "Zambezi River",
             1: "Nile River",
             2: "Snake River",
@@ -110,7 +169,8 @@ const quizAnswers = [
         correctAnswer: 1
     },
     {
-        a5: {
+        question: "In Australia, what is the largest ecosystem in the world?",
+        answers: {
             0: "The Outback",
             1: "The Bush",
             2: "Great Barrier Reef",
@@ -119,7 +179,8 @@ const quizAnswers = [
         correctAnswer: 2
     },
     {
-        a6: {
+        question: "Asia holds the largest percentage of the worlds population. Which Asian country has the most people?",
+        answers: {
             0: "China",
             1: "India",
             2: "Vietnam",
@@ -128,7 +189,8 @@ const quizAnswers = [
         correctAnswer: 1
     },
     {
-        a7: {
+        question: "The most visited attraction in Europe is ______________",
+        answers: {
             0: "Stone Henge",
             1: "The Louvre",
             2: "Eiffel Tower",
@@ -166,6 +228,9 @@ function consoleToScreen(selector) {
 
     optionFour.textContent = questionList[selector].options[3]
 }
+const submitButton = document.getElementById('submit');
+const resultsContainer = document.getElementById('results');
+
 
 function checkAnswer(selector) {
     document.getElementById(questionList.selector.answer).checked
