@@ -5,34 +5,35 @@
 // Location Info
 //Level One
 //Seven Continents so seven rounds
-
-function buildQuiz(){
+(function () {
+    
+    function showQuiz(){
     // variable to store the HTML output
     const output = [];
 
     // for each question...
-    myQuestions.forEach(
+    quizCard.forEach(
       (currentQuestion, questionNumber) => {
 
         // variable to store the list of possible answers
         const answers = [];
 
         // and for each available answer...
-        for(letter in currentQuestion.answers){
+        for(number in currentQuestion.answers){
 
           // ...add an HTML radio button
           answers.push(
             `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
+              <input type="radio" name="question${questionNumber}" value="${number}">
+              ${number} :
+              ${currentQuestion.answers[number]}
             </label>`
           );
         }
 
         // add this question and its answers to the output
         output.push(
-          `<div class="slide">
+          `<div class="cards">
             <div class="question"> ${currentQuestion.question} </div>
             <div class="answers"> ${answers.join("")} </div>
           </div>`
@@ -53,7 +54,7 @@ function buildQuiz(){
     let numCorrect = 0;
 
     // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
+    quizCard.forEach( (currentQuestion, questionNumber) => {
 
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
@@ -76,20 +77,20 @@ function buildQuiz(){
     });
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    resultsContainer.innerHTML = `${numCorrect} out of ${quizCard.length}`;
   }
 
-  function showSlide(n) {
-    slides[currentSlide].classList.remove('active-slide');
-    slides[n].classList.add('active-slide');
-    currentSlide = n;
-    if(currentSlide === 0){
+  function showCard(n) {
+    cards[currentCard].classList.remove('active-card');
+    cards[n].classList.add('active-card');
+    currentCard = n;
+    if(currentCard === 0){
       previousButton.style.display = 'none';
     }
     else{
       previousButton.style.display = 'inline-block';
     }
-    if(currentSlide === slides.length-1){
+    if(currentCard === cards.length-1){
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
     }
@@ -99,12 +100,12 @@ function buildQuiz(){
     }
   }
 
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
+  function showNextCard() {
+    showCard(currentCard + 1);
   }
 
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
+  function showPreviousCard() {
+    showCard(currentCard - 1);
   }
 
 
@@ -121,12 +122,15 @@ function showDirections(){
 };
 
 //function to show quiz
-
+const quizContainer = document.getElementById('quiz');
+const resultsContainer = document.getElementById('results');
+const submitButton = document.getElementById('submit');
+    
 
 // Quiz answer Data in array 
 // correct answer is underneath each quiz answer set 
 // and will be called upon in later function to keep score of the quiz
-const quizAnswers = [
+const quizCard = [
     {
         question: "Antarctica contains what percentage of total ice on Earth?",
         answers: {
@@ -145,7 +149,7 @@ const quizAnswers = [
            2:"Lake Titicaka", 
            3:"Amazon Rainforest"    
         },
-        correctAnswer: 3
+        correctAnswer: "3"
     },
     {
         question: "What is considered the lowest geographical point in North America?",
@@ -155,7 +159,7 @@ const quizAnswers = [
             2: "New Orleans, Lousiana",
             3: "Great Salt Lake"
         },
-        correctAnswer: 0
+        correctAnswer: "0"
 
     },
     {
@@ -166,7 +170,7 @@ const quizAnswers = [
             2: "Snake River",
             3: "Congo River"
         },
-        correctAnswer: 1
+        correctAnswer: "1"
     },
     {
         question: "In Australia, what is the largest ecosystem in the world?",
@@ -176,7 +180,7 @@ const quizAnswers = [
             2: "Great Barrier Reef",
             3: "Australian Alps" 
         },
-        correctAnswer: 2
+        correctAnswer: "2"
     },
     {
         question: "Asia holds the largest percentage of the worlds population. Which Asian country has the most people?",
@@ -186,7 +190,7 @@ const quizAnswers = [
             2: "Vietnam",
             3: "Bangladesh" 
         },
-        correctAnswer: 1
+        correctAnswer: "1"
     },
     {
         question: "The most visited attraction in Europe is ______________",
@@ -196,69 +200,85 @@ const quizAnswers = [
             2: "Eiffel Tower",
             3: "Rome Colusseum", 
         },
-        correctAnswer: 1
+        correctAnswer: "1"
     }
-]
+];
+
+showQuiz();
+
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const cards = document.querySelectorAll(".cards");
+let currentCard = 0;
+  
+    // Show the first slide
+ showCard(currentCard);
+  
+    // Event listeners
+submitButton.addEventListener('click', showResults);
+previousButton.addEventListener("click", showPreviousCard);
+nextButton.addEventListener("click", showNextCard);
 
 
+})();
 
-function showQuestion(selector) {
+// function showQuestion(selector) {
 
-    let titleDiv = document.getElementById(`${selector}Question`);
-    titleDiv.textContent = questionList[selector].question;
+//     let titleDiv = document.getElementById(`${selector}Question`);
+//     titleDiv.textContent = questionList[selector].question;
     
 
-    consoleToScreen(`${selector}`)
-}
+//     consoleToScreen(`${selector}`)
+// }
 
-function consoleToScreen(selector) {
-    let optionOne = document.getElementById(`${selector}OptionOne`);
+// function consoleToScreen(selector) {
+//     let optionOne = document.getElementById(`${selector}OptionOne`);
 
-    optionOne.textContent = questionList[selector].options[0]
+//     optionOne.textContent = questionList[selector].options[0]
 
-    let optionTwo = document.getElementById(`${selector}OptionTwo`);
+//     let optionTwo = document.getElementById(`${selector}OptionTwo`);
 
-    optionTwo.textContent = questionList[selector].options[1]
+//     optionTwo.textContent = questionList[selector].options[1]
 
-    let optionThree = document.getElementById(`${selector}OptionThree`);
+//     let optionThree = document.getElementById(`${selector}OptionThree`);
 
-    optionThree.textContent = questionList[selector].options[2]
+//     optionThree.textContent = questionList[selector].options[2]
 
-    let optionFour = document.getElementById(`${selector}OptionFour`);
+//     let optionFour = document.getElementById(`${selector}OptionFour`);
 
-    optionFour.textContent = questionList[selector].options[3]
-}
-const submitButton = document.getElementById('submit');
-const resultsContainer = document.getElementById('results');
-
-
-function checkAnswer(selector) {
-    document.getElementById(questionList.selector.answer).checked
-
-}
-
-// Calling function to show questions
-
-showQuestion('.antarcticaQ');
-showQuestion('.southAQuiz');
-showQuestion('.northAQuiz');
-showQuestion('.africaQuiz');
-showQuestion('.australiaQ');
-showQuestion('.asiaQuiz');
-showQuestion('.europeQuiz');
+//     optionFour.textContent = questionList[selector].options[3]
+// }
+// const submitButton = document.getElementById('submit');
+// const resultsContainer = document.getElementById('results');
 
 
+// function checkAnswer(selector) {
+//     document.getElementById(questionList.selector.answer).checked
+
+// }
+
+// // Calling function to show questions
+
+// showQuestion('.antarcticaQ');
+// showQuestion('.southAQuiz');
+// showQuestion('.northAQuiz');
+// showQuestion('.africaQuiz');
+// showQuestion('.australiaQ');
+// showQuestion('.asiaQuiz');
+// showQuestion('.europeQuiz');
 
 
-// 
 
 
-// Answer options for questions functionality
+// // 
+
+
+// // Answer options for questions functionality
     
     
-    // Start the quiz right away
-    // loadQuestion(current);
-    // loadAnswers(current);
+//     // Start the quiz right away
+//     // loadQuestion(current);
+//     // loadAnswers(current);
 
     
 

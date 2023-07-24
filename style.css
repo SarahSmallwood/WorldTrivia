@@ -4,9 +4,7 @@ body{
     border: solid rgb(77, 77, 223);
     border-radius: 5px;
     border-width: 8px;
-    height: 100%;
     width: 100%;
-    position: relative;
 }
 .startGame{
     border: solid white;
@@ -42,7 +40,7 @@ startGame:hover{
 .game{
     margin-top: 10px;
     background-image: url(https://cdn.pixabay.com/photo/2013/07/12/16/57/world-map-151576_1280.png);
-    height: 650px;
+    height: 100%;
     
 }
 .gameDirections{
@@ -72,51 +70,35 @@ startGame:hover{
     font-family: fantasy;
 }
 .board{
-    margin-top: 10px;
     height: 500px;
     width: 100%;
     display: inline-flex;
 }
-#score{
-    border: solid red;
-    width: 100%;
-    display: flex;
-    justify-content: right;
-}
-.submit{
+#submit{
     height: 40px;
     width: 200px;
     background-color: aqua;
     font-family: fantasy;
     border-radius: 40px;
 }
-.continents{
-    border: solid red;
-    margin-left: 20px;
-    height: 480px;
-    width: 240px;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-between;
+#next{
+    height: 40px;
+    width: 200px;
+    background-color: aqua;
+    font-family: fantasy;
+    border-radius: 40px;
+}
+#previous{
+    height: 40px;
+    width: 200px;
+    background-color: aqua;
+    font-family: fantasy;
+    border-radius: 40px;
 }
 #quiz{
     justify-content: space-evenly;
 }
 
-.antarctica{
-    background-color: rgb(200, 224, 246);
-    border: aliceblue;
-    border-radius: 40px;
-    height: 50px;
-    font-size: 20px;
-    font-family: fantasy;
-    width: 200px;
-
-}
-.antarctica:hover{
-    background-color: lightskyblue;
-    opacity: 0.5;
-}
 .antarcticaQ{
     display: none;
     background-image: url(https://www.betterphotography.com/images/Blog2022/BoothIsland.gif);
@@ -129,19 +111,7 @@ startGame:hover{
     border-radius: 10px;
     border-width: 5px;
 }
-.southAmerica{
-    background-color: purple;
-    border: purple;
-    border-radius: 40px;
-    height: 50px;
-    font-size: 15px;
-    font-family: fantasy;
-    width: 200px;
 
-}
-.southAmerica:hover{
-    opacity: 0.5;
-}
 .southAQuiz{
     display: none;
     background-image: url(https://media0.giphy.com/media/xyvHOUQzfMfba/giphy.gif);
@@ -153,18 +123,7 @@ startGame:hover{
     border-radius: 10px;
     border-width: 5px;
 }
-.northAmerica{
-    background-color: yellow;
-    border: yellow;
-    border-radius: 40px;
-    height: 50px;
-    font-size: 15px;
-    font-family: fantasy;
-    width: 200px;
-}
-.northAmerica:hover{
-    opacity: 0.5;
-}
+
 .northAQuiz{
     display: none;
     background-image: url(https://64.media.tumblr.com/a964458bee35dd2c7411a70b0125c437/tumblr_npeokel6ip1qzxxsgo1_500.gif);
@@ -175,18 +134,8 @@ startGame:hover{
     border-radius: 10px;
     border-width: 5px;
 }
-.africa{
-    background-color: orangered;
-    border: orangered;
-    border-radius: 40px;
-    height: 50px;
-    font-size: 20px;
-    font-family: fantasy;
-    width: 200px;
-}
-.africa:hover{
-    opacity: 0.5;
-}
+
+
 .africaQuiz{
     display: none;
     background-image: url(https://media4.giphy.com/media/2jMjVBTC1cwaiIUcN7/giphy.gif);
@@ -265,6 +214,36 @@ startGame:hover{
     border-radius: 10px;
     border-width: 5px;
 }
+.question{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.answers{
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+.answers label{
+    display: block;
+    margin-bottom: 10px;
+}
+.cards{
+    position: center;
+    width: 50%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.active-card{
+    opacity: 1;
+    z-index: 2;
+}
+.quiz-container{
+    position: relative;
+    height: 200px;
+    margin-top: 40px;
+}
+  
 
 
 /* Button Start Game or Next Round*/
