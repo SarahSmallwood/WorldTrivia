@@ -1,4 +1,4 @@
-
+// reference JAVASCRIPT MULTIPLE CHOICE QUIZ
 
 
 //Game Space 
@@ -114,10 +114,9 @@ showDirections();
         
             return false;
           }
-          get("quiz_status").innerHTML = "Voyage " + (numCorrect + 1) + " of 7";
+          // get("quiz_status").innerHTML = "Voyage " + (numCorrect + 1) + " of 7";
       } 
     });
-    
   }
 
   function restartQuiz() {
@@ -153,7 +152,6 @@ showDirections();
   function showPreviousCard() {
     showCard(currentCard - 1);
   }
-
 
 //function to show quiz
 const quizContainer = document.getElementById('quiz');

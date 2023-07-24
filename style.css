@@ -22,6 +22,8 @@ startGame:hover{
 
 .title{
     background-color: rgb(77, 77, 223);
+    border: solid blanchedalmond;
+    border-width: 0.2em;
     height: 45px;
     font-size: 30px;
     padding-top: 10px;
@@ -48,14 +50,16 @@ startGame:hover{
     margin-left: 50%;
     width: 50%;
     display: flex;
-    justify-content: right;
+    justify-content: left;
 }
 .directionsButton{
-    height: 40px;
+    height: 60px;
     width: 200px;
-    background-color: aqua;
+    background-color: rgb(72, 72, 243);
     font-family: fantasy;
     border-radius: 40px;
+    font-size: 20px;
+    color: blanchedalmond;
 }
 .directionsButton:hover{
     background-color: aquamarine;
@@ -63,7 +67,7 @@ startGame:hover{
 }
 .directions{
     display: none;
-    background-color: white;
+    background-color: blanchedalmond;
     border: solid black;
     border-width: 5px;
     border-radius: 40px;
@@ -71,32 +75,39 @@ startGame:hover{
     font-family: fantasy;
 }
 .board{
-    height: 500px;
+    height: 600px;
     width: 100%;
     display: inline-flex;
 }
-#submit{
-    height: 40px;
-    width: 200px;
-    background-color: aqua;
+
+#submit {
+    height: 100px;
+    width: 350px;
+    background-color: rgb(63, 233, 63);
     font-family: fantasy;
+    font-size: 20px;
     border-radius: 40px;
+    margin-top: 30%;
 }
 #next{
-    height: 40px;
+    height: 60px;
     width: 200px;
-    background-color: aqua;
+    background-color: rgb(72, 72, 243);
     font-family: fantasy;
     border-radius: 40px;
     display: flex;
     justify-content: flex-end;
+    font-size: 20px;
+    color: blanchedalmond;
 }
 #previous{
-    height: 40px;
+    height: 60px;
     width: 200px;
-    background-color: aqua;
+    background-color:rgb(72, 72, 243);
     font-family: fantasy;
     border-radius: 40px;
+    font-size: 20px;
+    color: blanchedalmond;
 }
 
 /* .antarcticaQ{
@@ -199,31 +210,31 @@ startGame:hover{
     margin-bottom: 10px;
 }
 .cards{
-    position: fixed;
-    width: 100%;
+    width: 50%;
     height: 250px;
     z-index: 1;
     opacity: 0;
     transition: opacity 0.5s;
     background-color: antiquewhite;
-    border: solid white;
+    border: solid antiquewhite;
     border-width: 5px;
+    position: absolute;
 }
 .active-card{
+    position: absolute;
+    z-index: 2;
     opacity: 1;
     background-image: url(https://www.betterphotography.com/images/Blog2022/BoothIsland.gif);
-    position: relative;
 }
 
 #restart-button {
-    display: none;
-    height: 40px;
-    width: 200px;
-    background-color: rgb(90, 88, 88);
+    height: 100px;
+    width: 350px;
+    background-color: darkred;
     font-family: fantasy;
+    font-size: 20px;
     border-radius: 40px;
-    display: flex;
-    justify-content: center;
+    margin-top: 30%;
 }
   
 

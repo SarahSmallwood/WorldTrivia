@@ -16,16 +16,18 @@
         <div class="game">
             <div class="gameDirections">
             <button class="directionsButton" onclick="showDirections()"> Travel Directions </button>
-            <button id="previous">Previous Question</button>
-            <button id="next">Next Question</button>
+            <button id="previous">Previous Continent</button>
+            <button id="next">Next Continent</button>
         </div>
             <div class="directions">
                 <p>
-                    Select Continent on left to start your adventure!
+                    Start Quiz - You begin in Antarctica!
                     <hr>
-                    Continent buttons match the map by color
+                    Select correct answer response from options list
                     <hr>
-                    Answer Continent Trivia Questions in order to have "Visited" that continent
+                    Answer Continent Trivia Question correctly in order to have "Visited" that continent
+                    <hr>
+                    Click Next Continent to go to the next Trivia Question
                     <hr>
                     You goal is to be a World Traveler!!
                     Visit all seven Continents!
@@ -38,10 +40,10 @@
                     <div class="trivia">
                     <div id="quiz">  </div>
                     <div id="results"></div>
-            </div>
-                    <button id="submit" onclick="showResults()"> Check Voyage...</button>
-                    <button id="restart-button">Restart Journey!</button>
-
+                    </div>
+                    <button id="submit" class="submit" onclick="showResults()"> Check Voyage...</button>
+                    <button id="restart-button" onclick="restartQuiz()">Restart Journey!</button>
+                </div>
 
         <script src="app.js" async defer></script>
     </body>
