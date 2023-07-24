@@ -137,7 +137,7 @@ startGame:hover{
 .southAQuiz{
     display: none;
     background-image: url(https://media0.giphy.com/media/xyvHOUQzfMfba/giphy.gif);
-    height: 250px;
+    height: 200px;
     width: 500px;
     margin-left: 250px;
     margin-top: 100px;
@@ -227,7 +227,7 @@ startGame:hover{
 .asiaQuiz{
     display: none;
     background-image: url(https://media3.giphy.com/media/11MKLWSDvMVSp2/giphy.gif);
-    height: 200px;
+    height: 250px;
     width: 500px;
     margin-left: 250px;
     border: solid white;
@@ -252,7 +252,7 @@ startGame:hover{
     background-image: url(https://i.makeagif.com/media/4-01-2016/3wGcZ0.gif);
     height: 300px;
     width: 500px;
-    margin-left: 250px;
+    margin-left: 220px;
     border: solid white;
     border-radius: 10px;
     border-width: 5px;

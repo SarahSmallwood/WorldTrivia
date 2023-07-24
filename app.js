@@ -1,17 +1,4 @@
-// Globe Icon 
-// Press to show game and hide button
-// function showGame(){
-//     let globe = document.getElementById('startGame');
-//     let gameScreen = document.getElementById('game')
-//     if (gameScreen.style.display = 'none'){
-//         gameScreen.style.display = 'block';
-//         globe.style.display = 'none';
-//     } else {
-//         gameScreen.style.display = 'none';
-//         globe.style.display = 'block';
-//     }
-    
-// }
+
 
 
 //Game Space 
@@ -77,87 +64,61 @@ function showQuiz(selector) {
 }
 
 
-// let q1 = { 
-//     titleOne: "Antarctica contains what percentage of total ice on Earth?",
-//     a1: [{ text: "50%", isCorrect: false },
-//     { text: "20%", isCorrect: false },
-//     { text: "90%", isCorrect: true },
-//     { text: "70%", isCorrect: false },
-//     ]
-// };
 
-// a -> 0, b -> 1 , c -> 2,.... d, e
-// list of continents -> [a, b, c, d, e....]
-// list of correct answers -> [2, 3, 0, 1, ...]
-// list of questions ->
-// [
-    // [
-        //  "question 1",
-        //  "question 2"
-        // ].
-    // [
-    //  "question 1",
-    //  "question 2"
-    // ].
-    // [
-    //  "question 1",
-    //  "question 2"
-    // ].
-    // ...
 
-// let correctAnswerList = [2, 3, 0, 1, 2, 1, 1]
-// let answerList =
-//     [
-//         // Antartica answers
-//         [
-//             "50",
-//             '20',
-//             '90',
-//             '70'
-//         ],
-//         // South America answers
-//         [
-//             "Andes Mountains", 
-//             "Patagonia Chile", 
-//             "Lake Titicaka", 
-//             "Amazon Rainforest"
-//         ],
-//         // NA Answers 
-//         [
-//             "Death Valley", 
-//             "Mexico City",
-//             "New Orleans, Lousiana",
-//             "Great Salt Lake", 0
-//         ],
-//         // Africa Answers
-//         [
-//             "Zambezi River",
-//             "Nile River",
-//             "Snake River",
-//             "Congo River", 1
-//         ],
-//         // Australia Answers
-//         [
-//             "The Outback",
-//             "The Bush",
-//             "Great Barrier Reef",
-//             "Australian Alps", 2  
-//         ],
-//         // Asia Answers
-//         [
-//             "China",
-//             "India",
-//             "Vietnam",
-//             "Bangladesh", 1
-//         ],
-//         // europe answers
-//         [
-//             "Stone Henge",
-//             "The Louvre",
-//             "Eiffel Tower",
-//             "Rome Colusseum", 1
-//         ]
-//     ]
+let correctAnswerList = [2, 3, 0, 1, 2, 1, 1]
+let answerList =
+    [
+        // Antartica answers
+        [
+            "50",
+            '20',
+            '90',
+            '70'
+        ],
+        // South America answers
+        [
+            "Andes Mountains", 
+            "Patagonia Chile", 
+            "Lake Titicaka", 
+            "Amazon Rainforest"
+        ],
+        // NA Answers 
+        [
+            "Death Valley", 
+            "Mexico City",
+            "New Orleans, Lousiana",
+            "Great Salt Lake", 0
+        ],
+        // Africa Answers
+        [
+            "Zambezi River",
+            "Nile River",
+            "Snake River",
+            "Congo River", 1
+        ],
+        // Australia Answers
+        [
+            "The Outback",
+            "The Bush",
+            "Great Barrier Reef",
+            "Australian Alps", 2  
+        ],
+        // Asia Answers
+        [
+            "China",
+            "India",
+            "Vietnam",
+            "Bangladesh", 1
+        ],
+        // europe answers
+        [
+            "Stone Henge",
+            "The Louvre",
+            "Eiffel Tower",
+            "Rome Colusseum", 1
+        ]
+    ]
 
 function showQuestion(selector) {
 
@@ -200,12 +161,6 @@ showQuestion('.asiaQuiz');
 showQuestion('.europeQuiz');
 
 
-// showQuestion(1, 'questionsSA', 'answersSA');
-// showQuestion(2, 'questionsNA', 'northAmerica');
-// showQuestion(3, 'questionsAF', 'africa');
-// showQuestion(4, 'questionsAU', 'australia');
-// showQuestion(5, 'questionsAA', 'asia');
-// showQuestion(6, 'questionsEU', 'europe');
 
 
 
